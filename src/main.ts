@@ -8,7 +8,12 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
-import { CoChevronCircleLeftAlt } from 'oh-vue-icons/icons'
+import {
+  CoChevronCircleLeftAlt,
+  CoExternalLink,
+  CoEnvelopeClosed,
+  CoPhone
+} from 'oh-vue-icons/icons'
 import { OhVueIcon, addIcons } from 'oh-vue-icons'
 import VMdPreview from '@kangc/v-md-editor/lib/preview'
 import '@kangc/v-md-editor/lib/style/base-editor.css'
@@ -17,7 +22,7 @@ import '@kangc/v-md-editor/lib/theme/style/vuepress.css'
 
 import hljs from 'highlight.js'
 
-addIcons(CoChevronCircleLeftAlt)
+addIcons(CoChevronCircleLeftAlt, CoExternalLink, CoEnvelopeClosed, CoPhone)
 
 const vuetify = createVuetify({
   components,
