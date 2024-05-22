@@ -13,6 +13,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
     "@kangc/v-md-editor": "^2.3.18",
     "axios": "^1.7.2",
     "core-js": "^3.8.3",
@@ -21,6 +24,7 @@
     "identicon.js": "^2.3.3",
     "luxon": "^3.4.4",
     "markdown-it": "^14.1.0",
+    "oh-vue-icons": "^1.0.0-rc3",
     "vue": "^3.4.21",
     "vue-preview-imgs": "^2.0.1",
     "vue-router": "^4.3.0",

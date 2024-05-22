@@ -8,12 +8,16 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
+import { CoChevronCircleLeftAlt } from 'oh-vue-icons/icons'
+import { OhVueIcon, addIcons } from 'oh-vue-icons'
 import VMdPreview from '@kangc/v-md-editor/lib/preview'
 import '@kangc/v-md-editor/lib/style/base-editor.css'
 import githubTheme from '@kangc/v-md-editor/lib/theme/github.js'
 import '@kangc/v-md-editor/lib/theme/style/vuepress.css'
 
 import hljs from 'highlight.js'
+
+addIcons(CoChevronCircleLeftAlt)
 
 const vuetify = createVuetify({
   components,
@@ -31,6 +35,7 @@ VMdPreview.use(githubTheme, {
   Hljs: hljs
 })
 const app = createApp(App)
+app.component('v-icon', OhVueIcon)
 
 app.use(router)
 app.use(vuetify).use(VMdPreview)

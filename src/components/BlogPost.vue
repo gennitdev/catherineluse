@@ -3,6 +3,7 @@ import { defineComponent, ref, watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import MarkdownIt from 'markdown-it'
 import axios from 'axios'
+import { CoChevronCircleLeftAlt } from 'oh-vue-icons/icons'
 
 export default defineComponent({
   setup() {
@@ -44,7 +45,10 @@ export default defineComponent({
 
 <template>
   <div>
-    <router-link to="/" class="text-blue-500 hover:underline">Back to list</router-link>
+    <router-link to="/" class="text-blue-500 hover:underline flex items-center">
+      <v-icon name="co-chevron-circle-left-alt" size="24" />
+      <span class="ml-1">Back to list</span>
+    </router-link>
     <div v-html="content"></div>
   </div>
 </template>

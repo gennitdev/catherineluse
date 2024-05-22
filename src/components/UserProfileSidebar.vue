@@ -21,7 +21,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="sticky top-0 max-h-screen overflow-auto rounded-lg border px-6 py-12">
+  <div class="sticky top-0 max-h-screen overflow-auto rounded-lg px-6 py-12">
     <div class="mb-4 mt-6 flex flex-col items-center gap-2">
       <div class="overflow-hidden border" style="height: 100px; width: 100px; border-radius: 50%">
         <img
