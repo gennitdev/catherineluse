@@ -11,7 +11,7 @@ export default defineComponent({
     return {
       profile: {
         name: 'Catherine Luse',
-        profilePicURL: '/images/square-headshot-medium-size.jpeg',
+        profilePicURL: '/posts/sample-post/square-headshot-medium-size.jpeg',
         intro:
           'I am a frontend software engineer. I love to write about technology, software development, and my experiences in the tech industry.'
       }
@@ -21,13 +21,14 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="sticky top-0 max-h-screen overflow-auto rounded-lg pt-6 border">
+  <div class="sticky top-0 max-h-screen overflow-auto rounded-lg border px-6 py-12">
     <div class="mb-4 mt-6 flex flex-col items-center gap-2">
-      <div class="h-16 w-16 overflow-hidden rounded-full border">
+      <div class="overflow-hidden border" style="height: 100px; width: 100px; border-radius: 50%">
         <img
           :src="profile.profilePicURL"
           :alt="'Picture of Catherine Luse'"
-          class="h-full w-full object-cover"
+          class="object-cover"
+          style="height: 100%; width: 100%; border-radius: 50%"
         />
       </div>
 
@@ -38,17 +39,12 @@ export default defineComponent({
         {{ profile.name }}
       </h1>
 
-      <div>
-        <div class="-ml-8 w-full">
-          <MarkdownPreview
-            v-if="profile.intro"
-            :key="profile.intro"
-            :text="profile.intro"
-            :word-limit="1000"
-          />
-        </div>
-        <slot />
-      </div>
+      <MarkdownPreview
+        v-if="profile.intro"
+        :key="profile.intro"
+        :text="profile.intro"
+        :word-limit="1000"
+      />
     </div>
   </div>
 </template>

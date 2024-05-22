@@ -34,7 +34,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="dark:bg-black border">
+  <div class="dark:bg-black h-full">
     <div
       v-if="smAndDown"
       :class="[theme === 'dark' ? 'channel-background-dark' : 'channel-background']"
@@ -44,7 +44,7 @@ export default defineComponent({
     <div v-if="smAndDown" class="flex flex-col justify-center">
       <UserProfileSidebar />
     </div>
-    <div class="dark:bg-gray-950 border">
+    <div class="dark:bg-gray-950">
       <article class="relative z-0 flex-1 focus:outline-none xl:order-last">
         <v-container fluid class="p-0">
           <v-row class="flex flex-row gap-3">
