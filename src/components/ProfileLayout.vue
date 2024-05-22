@@ -3,9 +3,15 @@ import { defineComponent } from 'vue'
 import { useRoute } from 'vue-router'
 import { relativeTime } from '@/utils/dateTimeUtils'
 import { useDisplay } from 'vuetify'
+import UserProfileSidebar from './UserProfileSidebar.vue'
+import BlogList from './BlogList.vue'
 
 export default defineComponent({
-  name: 'BlogList',
+  name: 'ProfileLayout',
+  components: {
+    BlogList,
+    UserProfileSidebar
+  },
   setup() {
     const route = useRoute()
     const profile = {
@@ -28,13 +34,35 @@ export default defineComponent({
 </script>
 
 <template>
-  <ul>
-    <li v-for="post in posts" :key="post.slug">
-      <router-link :to="{ name: 'BlogPost', params: { slug: post.slug } }">
-        {{ post.title }}
-      </router-link>
-    </li>
-  </ul>
+  <div class="dark:bg-black border">
+    <div
+      v-if="smAndDown"
+      :class="[theme === 'dark' ? 'channel-background-dark' : 'channel-background']"
+      class="h-24 w-full object-cover lg:h-28"
+      alt="background pattern"
+    />
+    <div v-if="smAndDown" class="flex flex-col justify-center">
+      <UserProfileSidebar />
+    </div>
+    <div class="dark:bg-gray-950 border">
+      <article class="relative z-0 flex-1 focus:outline-none xl:order-last">
+        <v-container fluid class="p-0">
+          <v-row class="flex flex-row gap-3">
+            <v-col v-if="!smAndDown" cols="3" class="p-0">
+              <UserProfileSidebar />
+            </v-col>
+            <v-col
+              :class="[!smAndDown ? 'pt-6' : '']"
+              :cols="!smAndDown ? 8 : 12"
+              class="rounded-lg bg-gray-100 dark:bg-gray-900"
+            >
+              <router-view />
+            </v-col>
+          </v-row>
+        </v-container>
+      </article>
+    </div>
+  </div>
 </template>
 <style>
 #channelAvatar {

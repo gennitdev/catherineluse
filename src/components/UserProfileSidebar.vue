@@ -11,7 +11,7 @@ export default defineComponent({
     return {
       profile: {
         name: 'Catherine Luse',
-        profilePicURL: '/posts/sample-post/square-headshot-medium-size.jpeg',
+        profilePicURL: '/images/square-headshot-medium-size.jpeg',
         intro:
           'I am a frontend software engineer. I love to write about technology, software development, and my experiences in the tech industry.'
       }
@@ -19,14 +19,18 @@ export default defineComponent({
   }
 })
 </script>
+
 <template>
-  <div class="sticky top-0 max-h-screen overflow-auto rounded-lg pt-6">
-    <div class="mb-4 mt-6 flex flex-col gap-2">
-      <img
-        :src="profile.profilePicURL"
-        :alt="'Picture of Catherine Luse'"
-        class="rounded-full h-24 w-24"
-      />
+  <div class="sticky top-0 max-h-screen overflow-auto rounded-lg pt-6 border">
+    <div class="mb-4 mt-6 flex flex-col items-center gap-2">
+      <div class="h-16 w-16 overflow-hidden rounded-full border">
+        <img
+          :src="profile.profilePicURL"
+          :alt="'Picture of Catherine Luse'"
+          class="h-full w-full object-cover"
+        />
+      </div>
+
       <h1
         v-if="profile?.name"
         class="mb-2 mt-4 flex border-gray-700 text-xl font-bold leading-6 text-gray-500 dark:text-gray-200"
