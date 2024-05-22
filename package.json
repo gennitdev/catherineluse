@@ -13,13 +13,16 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@kangc/v-md-editor": "^2.3.18",
     "axios": "^1.7.2",
     "core-js": "^3.8.3",
     "graphql-tag": "^2.12.6",
+    "highlight.js": "^11.9.0",
     "identicon.js": "^2.3.3",
     "luxon": "^3.4.4",
     "markdown-it": "^14.1.0",
     "vue": "^3.4.21",
+    "vue-preview-imgs": "^2.0.1",
     "vue-router": "^4.3.0",
     "vuetify": "^3.6.0-beta.0.0"
   },
@@ -31,6 +34,7 @@
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
     "@tsconfig/node20": "^20.1.4",
+    "@types/markdown-it": "^14.1.1",
     "@types/node": "^20.12.5",
     "@types/vue-router": "^2.0.0",
     "@types/webpack-env": "^1.18.5",

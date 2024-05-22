@@ -8,6 +8,13 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
+import VMdPreview from '@kangc/v-md-editor/lib/preview'
+import '@kangc/v-md-editor/lib/style/base-editor.css'
+import githubTheme from '@kangc/v-md-editor/lib/theme/github.js'
+import '@kangc/v-md-editor/lib/theme/style/vuepress.css'
+
+import hljs from 'highlight.js'
+
 const vuetify = createVuetify({
   components,
   directives,
@@ -20,9 +27,12 @@ const vuetify = createVuetify({
   }
 })
 
+VMdPreview.use(githubTheme, {
+  Hljs: hljs
+})
 const app = createApp(App)
 
 app.use(router)
-app.use(vuetify)
+app.use(vuetify).use(VMdPreview)
 
 app.mount('#app')

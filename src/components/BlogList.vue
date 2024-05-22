@@ -1,14 +1,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useRoute } from 'vue-router'
-import Avatar from './Avatar.vue'
 import { relativeTime } from '@/utils/dateTimeUtils'
 import { useDisplay } from 'vuetify'
 import UserProfileSidebar from './UserProfileSidebar.vue'
 
 export default defineComponent({
   components: {
-    Avatar,
     UserProfileSidebar
   },
   setup() {
@@ -33,54 +31,55 @@ export default defineComponent({
 </script>
 
 <template>
-  <v-layout>
-    <v-container class="max-w-7xl dark:bg-black">
-      <div
-        v-if="smAndDown"
-        :class="[theme === 'dark' ? 'channel-background-dark' : 'channel-background']"
-        class="h-24 w-full object-cover lg:h-28"
-        alt="background pattern"
-      />
-      <div v-if="smAndDown" class="flex flex-col justify-center">
-        <Avatar
-          class="-mt-24 mb-4 h-24 w-24 shadow-sm border"
+  <div class="dark:bg-black border">
+    <div
+      v-if="smAndDown"
+      :class="[theme === 'dark' ? 'channel-background-dark' : 'channel-background']"
+      class="h-24 w-full object-cover lg:h-28"
+      alt="background pattern"
+    />
+    <div v-if="smAndDown" class="flex flex-col justify-center">
+      <div class="mb-4 h-24 w-24 shadow-sm border">
+        <!-- <Avatar
           :text="profile.displayName"
           :src="profile.profilePicURL"
+          :is-square="false"
           :is-medium="true"
-        />
-        <div class="mb-6">
-          <div v-if="profile?.displayName">
-            {{ profile.displayName }}
-          </div>
+        /> -->
+      </div>
+
+      <div class="mb-6">
+        <div v-if="profile?.displayName">
+          {{ profile.displayName }}
         </div>
       </div>
-      <div class="dark:bg-gray-950">
-        <article class="relative z-0 flex-1 focus:outline-none xl:order-last">
-          <v-container fluid class="p-0">
-            <v-row class="flex flex-row gap-3">
-              <v-col v-if="!smAndDown" cols="3" class="p-0">
-                <UserProfileSidebar />
-              </v-col>
-              <v-col
-                :class="[!smAndDown ? 'pt-6' : '']"
-                :cols="!smAndDown ? 8 : 12"
-                class="rounded-lg bg-gray-100 dark:bg-gray-900"
-              >
-                <h1>Blog Posts</h1>
-                <ul>
-                  <li v-for="post in posts" :key="post.slug">
-                    <router-link :to="{ name: 'BlogPost', params: { slug: post.slug } }">
-                      {{ post.title }}
-                    </router-link>
-                  </li>
-                </ul>
-              </v-col>
-            </v-row>
-          </v-container>
-        </article>
-      </div>
-    </v-container>
-  </v-layout>
+    </div>
+    <div class="dark:bg-gray-950 border">
+      <article class="relative z-0 flex-1 focus:outline-none xl:order-last">
+        <v-container fluid class="p-0">
+          <v-row class="flex flex-row gap-3">
+            <v-col v-if="!smAndDown" cols="3" class="p-0">
+              <UserProfileSidebar />
+            </v-col>
+            <v-col
+              :class="[!smAndDown ? 'pt-6' : '']"
+              :cols="!smAndDown ? 8 : 12"
+              class="rounded-lg bg-gray-100 dark:bg-gray-900"
+            >
+              <h1>Blog Posts</h1>
+              <ul>
+                <li v-for="post in posts" :key="post.slug">
+                  <router-link :to="{ name: 'BlogPost', params: { slug: post.slug } }">
+                    {{ post.title }}
+                  </router-link>
+                </li>
+              </ul>
+            </v-col>
+          </v-row>
+        </v-container>
+      </article>
+    </div>
+  </div>
 </template>
 <style>
 #channelAvatar {
