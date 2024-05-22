@@ -15,11 +15,12 @@ export default defineComponent({
         profilePicURL: '/posts/sample-post/square-headshot-medium-size.jpeg',
         intro: `Welcome to my personal website! I am a frontend software engineer. I love to write about technology, software development, and my experiences in the tech industry.`,
         contact: {
-          phone: '+1 (555) 123-4567',
-          email: 'catherine.luse@example.com',
+          phone: '+1 (623) 853-7028',
+          email: 'catherine.luse@gmail.com',
           githubWork: 'https://github.com/catherineluse',
           githubPersonal: 'https://github.com/gennitdev',
-          linkedin: 'https://www.linkedin.com/in/catherineluse/'
+          linkedin: 'https://www.linkedin.com/in/catherine-luse-a306911a8/',
+          location: 'Phoenix, AZ'
         }
       }
     }
@@ -39,9 +40,13 @@ export default defineComponent({
         />
       </div>
 
-      <h1 v-if="profile?.name" class="mb-2 mt-4 flex text-2xl font-bold leading-6 text-gray-400">
+      <h1 v-if="profile?.name" class="mt-4 flex text-2xl font-bold text-gray-400">
         {{ profile.name }}
       </h1>
+
+      <p v-if="profile?.contact.location" class="text-gray-400 text-sm">
+        <v-icon name="co-location-pin" /> {{ profile.contact.location }}
+      </p>
 
       <div class="mt-4 flex flex-col gap-4">
         <h2 class="text-lg font-bold text-gray-400">About</h2>
@@ -54,16 +59,16 @@ export default defineComponent({
           </li>
           <li v-if="profile.contact.email" class="flex items -center gap-2">
             <v-icon name="co-envelope-closed" size="24" />
-            <span>{{ profile.contact.email }}</span>
+            <a :href="'mailto:' + profile.contact.email">{{ profile.contact.email }}</a>
           </li>
           <li v-if="profile.contact.githubWork" class="flex items -center gap-2">
             <a :href="profile.contact.githubWork" target="_blank" rel="noopener noreferrer"
-              >GitHub Profile (Work) <v-icon name="co-external-link" size="16" />
+              >GitHub Profile (Main) <v-icon name="co-external-link" size="16" />
             </a>
           </li>
           <li v-if="profile.contact.githubPersonal" class="flex items -center gap-2">
             <a :href="profile.contact.githubPersonal" target="_blank" rel="noopener noreferrer"
-              >GitHub Profile (Personal) <v-icon name="co-external-link" size="16" />
+              >GitHub Profile (Side Project) <v-icon name="co-external-link" size="16" />
             </a>
           </li>
           <li v-if="profile.contact.linkedin" class="flex items -center gap-2">
