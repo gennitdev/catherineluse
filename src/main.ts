@@ -13,7 +13,8 @@ import {
   CoExternalLink,
   CoEnvelopeClosed,
   CoPhone,
-  CoLocationPin
+  CoLocationPin,
+  FcDownload
 } from 'oh-vue-icons/icons'
 import { OhVueIcon, addIcons } from 'oh-vue-icons'
 import VMdPreview from '@kangc/v-md-editor/lib/preview'
@@ -23,7 +24,14 @@ import '@kangc/v-md-editor/lib/theme/style/vuepress.css'
 
 import hljs from 'highlight.js'
 
-addIcons(CoChevronCircleLeftAlt, CoExternalLink, CoEnvelopeClosed, CoPhone, CoLocationPin)
+addIcons(
+  CoChevronCircleLeftAlt,
+  CoExternalLink,
+  CoEnvelopeClosed,
+  CoPhone,
+  CoLocationPin,
+  FcDownload
+)
 
 const vuetify = createVuetify({
   components,

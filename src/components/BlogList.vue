@@ -20,7 +20,30 @@ export default defineComponent({
       route,
       smAndDown,
       profile,
-      posts: [{ title: 'Sample Post', slug: 'sample-post' }],
+      posts: [
+        {
+          title: 'Sample Post',
+          slug: 'sample-post'
+        },
+        {
+          title: 'Multiforum demo: Event Search',
+          slug: 'events'
+        },
+        {
+          title: 'Multiforum demo: Discussions',
+          slug: 'discussions'
+        },
+        {
+          title: 'Multiforum demo: Finding forums',
+          slug: 'forums'
+        }
+        // {
+        //   title: "Backend development in Multiforum"
+        // },
+        // {
+        //   title: "Why Multiforum?"
+        // }
+      ],
       theme: 'dark'
     }
   }

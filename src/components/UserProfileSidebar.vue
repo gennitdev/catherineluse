@@ -13,7 +13,7 @@ export default defineComponent({
       profile: {
         name: 'Catherine Luse',
         profilePicURL: '/posts/sample-post/square-headshot-medium-size.jpeg',
-        intro: `Welcome to my personal website! I am a frontend software engineer. I love to write about technology, software development, and my experiences in the tech industry.`,
+        intro: `Welcome to my personal website! I am a fullstack software engineer with a frontend focus. I am a lifelong learner and passionate about writing software that unlocks new possibilities.`,
         contact: {
           phone: '+1 (623) 853-7028',
           email: 'catherine.luse@gmail.com',
@@ -22,7 +22,8 @@ export default defineComponent({
           linkedin: 'https://www.linkedin.com/in/catherine-luse-a306911a8/',
           location: 'Phoenix, AZ'
         }
-      }
+      },
+      resumeUrl: '/CatherineLuseResumeJune2024.pdf'
     }
   }
 })
@@ -30,7 +31,7 @@ export default defineComponent({
 
 <template>
   <div class="sticky top-0 max-h-screen overflow-auto rounded-lg px-8 py-12">
-    <div class="mb-4 mt-6 flex flex-col items-center gap-2">
+    <div class="mb-4 mt-6 flex flex-col gap-2">
       <div class="overflow-hidden border" style="height: 100px; width: 100px; border-radius: 50%">
         <img
           :src="profile.profilePicURL"
@@ -63,7 +64,7 @@ export default defineComponent({
           </li>
           <li v-if="profile.contact.githubWork" class="flex items -center gap-2">
             <a :href="profile.contact.githubWork" target="_blank" rel="noopener noreferrer"
-              >GitHub Profile (Main) <v-icon name="co-external-link" size="16" />
+              >GitHub Profile (Work) <v-icon name="co-external-link" size="16" />
             </a>
           </li>
           <li v-if="profile.contact.githubPersonal" class="flex items -center gap-2">
@@ -75,6 +76,14 @@ export default defineComponent({
             <a :href="profile.contact.linkedin" target="_blank" rel="noopener noreferrer"
               >LinkedIn Profile <v-icon name="co-external-link" size="16"
             /></a>
+          </li>
+          <li>
+            <a :href="resumeUrl" download="resume.pdf">
+              <button>
+                <v-icon name="fc-download" size="24" />
+                Download Resume
+              </button>
+            </a>
           </li>
         </ul>
       </div>
