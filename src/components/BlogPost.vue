@@ -3,7 +3,6 @@ import { defineComponent, ref, watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import MarkdownIt from 'markdown-it'
 import axios from 'axios'
-import { CoChevronCircleLeftAlt } from 'oh-vue-icons/icons'
 
 export default defineComponent({
   setup() {

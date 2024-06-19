@@ -10,11 +10,11 @@ import * as directives from 'vuetify/directives'
 
 import {
   CoChevronCircleLeftAlt,
-  CoExternalLink,
-  CoEnvelopeClosed,
-  CoPhone,
-  CoLocationPin,
-  FcDownload
+  PxExternalLink,
+  PxMail,
+  PxDevicePhone,
+  PxPin,
+  PxDownload
 } from 'oh-vue-icons/icons'
 import { OhVueIcon, addIcons } from 'oh-vue-icons'
 import VMdPreview from '@kangc/v-md-editor/lib/preview'
@@ -24,14 +24,7 @@ import '@kangc/v-md-editor/lib/theme/style/vuepress.css'
 
 import hljs from 'highlight.js'
 
-addIcons(
-  CoChevronCircleLeftAlt,
-  CoExternalLink,
-  CoEnvelopeClosed,
-  CoPhone,
-  CoLocationPin,
-  FcDownload
-)
+addIcons(CoChevronCircleLeftAlt, PxExternalLink, PxMail, PxDevicePhone, PxPin, PxDownload)
 
 const vuetify = createVuetify({
   components,

@@ -1,7 +1,139 @@
-# Sample Post
+### Sitewide event search - filtering by time
 
-This is a sample blog post.
+Here's how it looks if you filter all in-person events by 'next weekend.' If today is during the week of
+Monday, June 17, then the events are filtered to show events on Saturday the 22nd and Sunday the 23rd:
 
-Sample image:
+![All in person events filtered by next weekend](./screenshots/all-in-person-events-filtered-by-next-weekend.png)
 
-![Sample Image](/posts/sample-post/square-headshot-medium-size.jpeg)
+### Highlighting events on the map
+
+If you mouse over an event list item or map marker, an info window pops up on the map
+and the list item is also highlighted. This is supposed to make it easier to draw a connection
+between the two:
+
+![Highlighting an item on the map filtered by forums](./screenshots/highlighting-item-on-map-filtered-by-forums.png)
+
+Here's another example showing what happens if you hover over an event in the map view:
+
+![Map view hover on list item](./screenshots/map-view-hover-on-list-item.png)
+
+### Filtering the map by forums
+
+If I'm only interested in events from a few specific forums, I filter the
+map by those forums:
+
+![Filtering map by multiple forums](./screenshots/filtering-map-by-multiple-forums.png)
+
+Note: The above component for selecting forums is unwieldy and I'll be replacing it
+with something more compact.
+
+The resulting event list is now filtered by the two forums I selected - the writers group
+and the birdwatching one. All of the concerts are no longer in the list and their map
+markers are no longer on the map:
+
+![Highlighting item on map filtered by forums](./screenshots/highlighting-item-on-map-filtered-by-forums.png)
+
+### Clicking forum name in event drawer
+
+If you're looking at events from the map view, and you click on one, the details
+will show up in a drawer:
+
+![Clicking an event list item](./screenshots/clicking-an-event-list-item.png)
+
+In that drawer you can see what forums that event was
+submitted to. If you click the forum name it will take you to the event page in
+the context of that forum:
+
+![Clicking forum name in event drawer](./screenshots/clicking-the-forum-that-the-event-was-submitted-to.png)
+
+Screenshots of event detail pages within a forum are below.
+
+### Multiple events at the same location
+
+Some map markers indicate that there are multiple events at the same location. If
+you click that, you can see the list of events that are taking place there at different times:
+
+![Clicking different map marker with multiple events](./screenshots/clicking-different-map-marker-with-multiple-events.png)
+
+Here's another example of how it looks when you click on a location with multiple events. In
+this case, the events are both at the same concert venue, Crescent Ballroom:
+
+![Clicking map marker with multiple events](./screenshots/clicking-map-marker-with-multiple-events.png)
+
+### Clicking a single event
+
+If you click on an event list item or map marker for a single event, the details of that event show
+in a drawer (the drawer also contains permanent links to the event's detail page, useful for sharing event details):
+
+![Map view when you click on a list item](./screenshots/map-view-click-on-list-item.png)
+
+### Event list within a forum
+
+Each forum can have its own list of upcoming events. In this example, a forum about
+rock music in Phoenix is promoting events at multiple venues. Meanwhile, the
+forum sidebar shows the handful of events which are coming up the soonest, so that
+they are visible even when the Discussions tab is active:
+
+![Phoenix rock event list](./screenshots/phx-rock-event-list.png)
+
+In this particular example, hypothetically, the venues may host a variety of events
+in multiple musical genres but these particular ones would be of interest to people
+who like rock music. So in that way, the forum can be used as a way to organize
+public information about events and promote them to the people who find them most relevant.
+
+(The screenshots may not show the best examples. Morphia Slow categorizes
+herself as "Folk-Murder-Pop", but you get the idea.)
+
+Events can be filtered within a forum. This screenshot shows how it looks when
+events in "Phoenix Bird Lovers" are filtered to show only events next weekend:
+
+![Phoenix bird lovers filtered by next weekend](./screenshots/phx-bird-lovers-filtered-by-next-weekend.png)
+
+Here are the events filtered by location. In this case they are filtered to show
+events within 10 miles of Tempe:
+
+![Phoenix bird lovers events filtered by location](./screenshots/phx-bird-lovers-events-filtered-by-location.png)
+
+### Submitting an event to forums
+
+You can share an event to one or more forums. In a typical use case, you would link to an official
+event page with the full details and information about how to buy tickets, if applicable.
+
+Submitting an event to multiple forums is a good way to increase the visibility of the event. This one will now be visible in the context of both of the selected forums:
+
+![Submitting an event to multiple forums](./screenshots/submitting-event-to-multiple-forums.png)
+
+If you add an address, the event will be discoverable from the sitewide event search page (the map view):
+
+![Adding an address for so that the event shows up on the map](./screenshots/adding-an-address-makes-the-event-discoverable-from-sitewide-search.png)
+
+### Recently visited forums
+
+If you click the menu button on the top left of any page, it shows recently visited forums
+to support easy context switching.
+
+![Recently visited forums](./screenshots/recently-visited-forums.png)
+
+## Screenshots - Mobile width
+
+### Event list view within a forum
+
+Here's the list of events within a specific forum:
+
+![Forum event list at mobile width](./screenshots/forum-event-list-at-mobile-width.png)
+
+### Event detail page
+
+This screenshot shows how an event detail page looks at mobile width, if you
+come to it from within the context of an individual forum:
+
+![Event detail page at mobile width](./screenshots/event-detail-within-forum-at-mobile-width.png)
+
+### Sitewide event list
+
+Here's the sitewide in-person event list with an active filter,
+shown here at mobile width. All the same filtering features work at mobile width
+as well. Here, the events are filtered by the birdwatching forum,
+so not all of the map markers are displayed.
+
+![Sitewide filtered event list at mobile width](./screenshots/sitewide-filtered-event-list-at-mobile-width.png)

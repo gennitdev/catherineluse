@@ -4,12 +4,10 @@ import { useRoute } from 'vue-router'
 import { relativeTime } from '@/utils/dateTimeUtils'
 import { useDisplay } from 'vuetify'
 import UserProfileSidebar from './UserProfileSidebar.vue'
-import BlogList from './BlogList.vue'
 
 export default defineComponent({
   name: 'ProfileLayout',
   components: {
-    BlogList,
     UserProfileSidebar
   },
   setup() {
@@ -26,7 +24,6 @@ export default defineComponent({
       route,
       smAndDown,
       profile,
-      posts: [{ title: 'Sample Post', slug: 'sample-post' }],
       theme: 'dark'
     }
   }
@@ -34,23 +31,25 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="h-full">
-    <div v-if="smAndDown" class="flex flex-col justify-center">
-      <UserProfileSidebar />
-    </div>
-    <div>
-      <article class="relative z-0 flex-1 focus:outline-none xl:order-last">
-        <v-row class="flex flex-row gap-3">
-          <v-col v-if="!smAndDown" cols="3">
-            <UserProfileSidebar />
-          </v-col>
-          <v-col :class="[!smAndDown ? 'px-12' : '']" :cols="!smAndDown ? 8 : 12">
-            <v-container fluid>
-              <router-view />
-            </v-container>
-          </v-col>
-        </v-row>
-      </article>
+  <div class="flex justify-center">
+    <div class="max-w-7xl">
+      <div v-if="smAndDown" class="flex flex-col justify-center">
+        <UserProfileSidebar />
+      </div>
+      <div>
+        <article class="relative z-0 flex-1 focus:outline-none xl:order-last">
+          <v-row class="flex flex-row gap-3">
+            <v-col :cols="smAndDown ? 12 : 3">
+              <UserProfileSidebar />
+            </v-col>
+            <v-col :class="[!smAndDown ? 'px-12' : '']" :cols="!smAndDown ? 8 : 12">
+              <v-container fluid>
+                <router-view />
+              </v-container>
+            </v-col>
+          </v-row>
+        </article>
+      </div>
     </div>
   </div>
 </template>
