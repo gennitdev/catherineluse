@@ -1,3 +1,9 @@
+I'm excited to share my latest side project, a local event finder tool designed to help people discover and promote events in their area. Whether you're a local business looking to attract more customers to your bar or coffee shop, or you're an enthusiast wanting to connect with others who share your passion for rock music, trivia, or bird watching, this tool has you covered.
+
+The platform allows anyone to post events, complete with a title, description, and address. Events with addresses are conveniently displayed on a map, making it easy to see what's happening near you. The tool includes powerful features like filtering events by time and forum, highlighting events on the map when you hover over them, and providing detailed views of each event. It's designed to make event discovery and promotion simple and effective, fostering a vibrant local community.
+
+In this blog post, I'll walk you through the various features of the tool with screenshots, demonstrating how you can make the most out of this platform to find and share events that matter to you. Let's dive in!
+
 ### Sitewide event search - filtering by time
 
 Here's how it looks if you filter all in-person events by 'next weekend.' If today is during the week of

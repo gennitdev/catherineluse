@@ -12,7 +12,7 @@ export default defineComponent({
       },
       profile: {
         name: 'Catherine Luse',
-        profilePicURL: '/posts/sample-post/square-headshot-medium-size.jpeg',
+        profilePicURL: '/images/square-headshot-medium-size.jpeg',
         intro: `Welcome to my personal website! I am a fullstack software engineer with a frontend focus. I am a lifelong learner and passionate about writing software that helps people, especially in the area of humane technology.`,
         contact: {
           phone: '+1 (623) 853-7028',
