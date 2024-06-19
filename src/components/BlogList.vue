@@ -5,6 +5,7 @@ import { relativeTime } from '@/utils/dateTimeUtils'
 import { useDisplay } from 'vuetify'
 import axios from 'axios'
 import MarkdownIt from 'markdown-it'
+import MarkdownPreview from '@/components/MarkdownPreview.vue'
 
 type Post = {
   title: string
@@ -14,6 +15,9 @@ type Post = {
 
 export default defineComponent({
   name: 'BlogList',
+  components: {
+    MarkdownPreview
+  },
   setup() {
     const route = useRoute()
     const profile = {
@@ -64,23 +68,30 @@ export default defineComponent({
       profile,
       smAndDown
     }
+  },
+  methods: {
+    getRelativeTime(date: string) {
+      return relativeTime(date)
+    }
   }
 })
 </script>
 
 <template>
   <ul>
-    <li v-for="post in posts" :key="post.slug" class="mb-4">
+    <li
+      v-for="post in posts"
+      :key="post.slug"
+      class="relative my-1 flex-col rounded-lg border bg-white py-6 px-8"
+    >
       <router-link :to="{ name: 'BlogPost', params: { slug: post.slug } }">
-        <h2>{{ post.title }}</h2>
+        <h2 class="cursor-pointer hover:text-gray-500 font-bold text-lg">{{ post.title }}</h2>
       </router-link>
-      <div v-html="md.render(post.content.slice(0, 200) + '...')"></div>
-      <router-link
-        :to="{ name: 'BlogPost', params: { slug: post.slug } }"
-        class="text-blue-500 hover:underline"
-      >
-        View more
-      </router-link>
+      <!-- {{ `Posted ${relativeTime}` }} -->
+
+      <div v-if="post?.content" class="my-2 border-gray-400">
+        <MarkdownPreview :text="post.content" :disable-gallery="true" :word-limit="50" />
+      </div>
     </li>
   </ul>
 </template>

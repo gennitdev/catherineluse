@@ -33,13 +33,10 @@ export default defineComponent({
 <template>
   <div class="flex justify-center">
     <div class="max-w-7xl">
-      <div v-if="smAndDown" class="flex flex-col justify-center">
-        <UserProfileSidebar />
-      </div>
       <div>
         <article class="relative z-0 flex-1 focus:outline-none xl:order-last">
-          <v-row class="flex flex-row gap-3">
-            <v-col :cols="smAndDown ? 12 : 3">
+          <v-row class="flex flex-row">
+            <v-col :cols="smAndDown ? 12 : 4">
               <UserProfileSidebar />
             </v-col>
             <v-col :class="[!smAndDown ? 'px-12' : '']" :cols="!smAndDown ? 8 : 12">

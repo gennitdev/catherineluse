@@ -1,10 +1,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useDisplay } from 'vuetify'
 
 export default defineComponent({
   name: 'UserProfileSidebar',
 
   setup() {
+    const { smAndDown } = useDisplay()
     return {
       navItems: {
         blogPosts: 'Blog Posts',
@@ -23,14 +25,18 @@ export default defineComponent({
           location: 'Phoenix, AZ'
         }
       },
-      resumeUrl: '/CatherineLuseResumeJune2024.pdf'
+      resumeUrl: '/CatherineLuseResumeJune2024.pdf',
+      smAndDown
     }
   }
 })
 </script>
 
 <template>
-  <div class="sticky top-0 max-h-screen overflow-auto rounded-lg px-8 py-12">
+  <div
+    class="sticky top-0 overflow-auto rounded-lg px-8 py-12"
+    :class="[!smAndDown ? 'max-h-screen' : '']"
+  >
     <div class="mb-4 mt-6 flex flex-col gap-2">
       <div class="overflow-hidden border" style="height: 100px; width: 100px; border-radius: 50%">
         <img

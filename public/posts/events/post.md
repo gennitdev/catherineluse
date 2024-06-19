@@ -1,10 +1,10 @@
-I'm excited to share my latest side project, a local event finder tool designed to help people discover and promote events in their area. Whether you're a local business looking to attract more customers to your bar or coffee shop, or you're an enthusiast wanting to connect with others who share your passion for rock music, trivia, or bird watching, this tool has you covered.
+Hey everyone! I'm really excited to share my latest side project with you—a local event finder tool that I've been working on. It's designed to help people find and promote events happening around them. Whether you're a local business owner wanting to attract more customers to your bar or coffee shop, or just someone who wants to share your love for rock music, trivia, or bird watching, this tool should make it easier.
 
-The platform allows anyone to post events, complete with a title, description, and address. Events with addresses are conveniently displayed on a map, making it easy to see what's happening near you. The tool includes powerful features like filtering events by time and forum, highlighting events on the map when you hover over them, and providing detailed views of each event. It's designed to make event discovery and promotion simple and effective, fostering a vibrant local community.
+Anyone can post events on the platform, with a title, description, and address. If you include an address, the event will show up on a map so you can see what's happening nearby. There are also features for filtering events by time and forum, highlighting events on the map, and viewing detailed information about each event. My goal was to make it simple and effective for everyone to find and share local events.
 
-In this blog post, I'll walk you through the various features of the tool with screenshots, demonstrating how you can make the most out of this platform to find and share events that matter to you. Let's dive in!
+In this blog post, I'll show you the different features of the tool with some screenshots. Hopefully, it will give you a good idea of how you can use it to discover and share events in your community. Let's get started!
 
-### Sitewide event search - filtering by time
+## Sitewide event search - filtering by time
 
 Here's how it looks if you filter all in-person events by 'next weekend.' If today is during the week of
 Monday, June 17, then the events are filtered to show events on Saturday the 22nd and Sunday the 23rd:

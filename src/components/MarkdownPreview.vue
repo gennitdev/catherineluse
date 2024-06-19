@@ -180,7 +180,7 @@ export default defineComponent({
     <v-md-preview :text="shownText" @click="handleImageClick($event)" />
     <button
       v-if="shouldShowMoreButton"
-      class="mb-8 ml-8 text-sm text-blue-600 hover:underline dark:text-gray-300"
+      class="mb-8 ml-8 text-sm text-blue-600 hover:underline"
       @click="toggleShowFullText"
     >
       {{ showFullText ? 'Show Less' : 'Show More' }}
