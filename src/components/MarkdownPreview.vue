@@ -188,9 +188,6 @@ export default defineComponent({
   </div>
 </template>
 <style>
-.github-markdown-body img {
-  cursor: pointer !important;
-}
 p,
 ul,
 li {
