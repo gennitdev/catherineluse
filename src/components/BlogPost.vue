@@ -45,7 +45,7 @@ export default defineComponent({
 <template>
   <div>
     <router-link to="/" class="text-blue-500 hover:underline flex items-center">
-      <v-icon name="co-chevron-circle-left-alt" />
+      <v-icon name="px-chevron-left" />
       <span class="ml-1">Back to list</span>
     </router-link>
     <div v-html="content"></div>

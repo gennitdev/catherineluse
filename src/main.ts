@@ -9,7 +9,7 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
 import {
-  CoChevronCircleLeftAlt,
+  PxChevronLeft,
   PxExternalLink,
   PxMail,
   PxDevicePhone,
@@ -24,7 +24,7 @@ import '@kangc/v-md-editor/lib/theme/style/vuepress.css'
 
 import hljs from 'highlight.js'
 
-addIcons(CoChevronCircleLeftAlt, PxExternalLink, PxMail, PxDevicePhone, PxPin, PxDownload)
+addIcons(PxChevronLeft, PxExternalLink, PxMail, PxDevicePhone, PxPin, PxDownload)
 
 const vuetify = createVuetify({
   components,
