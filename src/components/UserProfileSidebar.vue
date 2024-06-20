@@ -88,14 +88,36 @@ export default defineComponent({
               >GitHub Profile (Work) <v-icon name="px-external-link" size="16" />
             </a>
           </li>
-          <li v-if="profile.contact.githubPersonal" class="flex items -center gap-2">
-            <a
-              class="underline"
-              :href="profile.contact.githubPersonal"
-              target="_blank"
-              rel="noopener noreferrer"
-              >GitHub Profile (Side Project) <v-icon name="px-external-link" size="16" />
-            </a>
+          <li v-if="profile.contact.githubPersonal">
+            <div class="flex items -center gap-2">
+              <a
+                class="underline"
+                :href="profile.contact.githubPersonal"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub Profile (Side Project) <v-icon name="px-external-link" size="16" />
+              </a>
+            </div>
+            <ul class="list-disc ml-6">
+              <li class="underline">
+                <a
+                  href="https://github.com/gennit-project/multiforum-frontend"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Multiforum Frontend GitHub Repository
+                  <v-icon name="px-external-link" size="16" />
+                </a>
+              </li>
+              <li class="underline">
+                <a
+                  href="https://github.com/gennit-project/multiforum-backend"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Multiforum Backend GitHub Repository
+                  <v-icon name="px-external-link" size="16" />
+                </a>
+              </li>
+            </ul>
           </li>
           <li>
             <a :href="resumeUrl" download="resume.pdf">
