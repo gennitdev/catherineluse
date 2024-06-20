@@ -70,6 +70,15 @@ export default defineComponent({
               profile.contact.email
             }}</a>
           </li>
+          <li v-if="profile.contact.linkedin" class="flex items -center gap-2">
+            <a
+              class="underline"
+              :href="profile.contact.linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn Profile <v-icon name="px-external-link" size="16"
+            /></a>
+          </li>
           <li v-if="profile.contact.githubWork" class="flex items -center gap-2">
             <a
               class="underline"
@@ -87,15 +96,6 @@ export default defineComponent({
               rel="noopener noreferrer"
               >GitHub Profile (Side Project) <v-icon name="px-external-link" size="16" />
             </a>
-          </li>
-          <li v-if="profile.contact.linkedin" class="flex items -center gap-2">
-            <a
-              class="underline"
-              :href="profile.contact.linkedin"
-              target="_blank"
-              rel="noopener noreferrer"
-              >LinkedIn Profile <v-icon name="px-external-link" size="16"
-            /></a>
           </li>
           <li>
             <a :href="resumeUrl" download="resume.pdf">

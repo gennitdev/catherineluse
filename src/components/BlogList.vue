@@ -11,6 +11,7 @@ type Post = {
   title: string
   slug: string
   content?: string
+  createdAt: string
 }
 
 export default defineComponent({
@@ -42,9 +43,21 @@ export default defineComponent({
 
     const loadPosts = async () => {
       const postList: Post[] = [
-        { title: 'Multiforum Demo Part 1: Event Search', slug: 'events' },
-        { title: 'Multiforum Demo Part 2: Discussions', slug: 'discussions' },
-        { title: 'Multiforum Demo Part 3: Finding forums', slug: 'forums' }
+        {
+          title: 'Multiforum Demo Part 1: Event Search',
+          slug: 'events',
+          createdAt: '2024-06-20T00:34:16.027Z'
+        },
+        {
+          title: 'Multiforum Demo Part 2: Discussions',
+          slug: 'discussions',
+          createdAt: '2024-06-20T00:34:16.027Z'
+        },
+        {
+          title: 'Multiforum Demo Part 3: Finding forums',
+          slug: 'forums',
+          createdAt: '2024-06-20T00:34:16.027Z'
+        }
       ]
 
       const loadedPosts = await Promise.all(
@@ -87,7 +100,7 @@ export default defineComponent({
       <router-link :to="{ name: 'BlogPost', params: { slug: post.slug } }">
         <h2 class="cursor-pointer hover:text-gray-500 font-bold text-lg">{{ post.title }}</h2>
       </router-link>
-      <!-- {{ `Posted ${relativeTime}` }} -->
+      <span class="text-gray-500">{{ `Catherine posted ${getRelativeTime(post.createdAt)}` }}</span>
 
       <div v-if="post?.content" class="my-2 border-gray-400">
         <MarkdownPreview :text="post.content" :disable-gallery="true" :word-limit="100" />
