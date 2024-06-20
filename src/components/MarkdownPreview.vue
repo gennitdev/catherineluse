@@ -88,46 +88,6 @@ export default defineComponent({
       showFullText.value = !showFullText.value
     }
 
-    // Define a function to update the dimensions
-    const updateImageDimensions = (src: string) => {
-      const img = new Image()
-      img.onload = function () {
-        const { width, height } = calculateAspectRatioFit(
-          this.width,
-          this.height,
-          window.innerWidth,
-          window.innerHeight
-        )
-
-        // Find the image in the embeddedImages array and update its dimensions
-        const imageItem = embeddedImages.value.find((item) => item.src === src)
-        if (imageItem) {
-          imageItem.width = width
-          imageItem.height = height
-        } else {
-          // Or add a new item if it doesn't exist
-          embeddedImages.value.push({
-            href: src,
-            src,
-            thumbnail: src,
-            width,
-            height
-          })
-        }
-      }
-      img.src = src
-    }
-
-    // Watch for changes in the markdownContent and update embeddedImages accordingly
-    watchEffect(() => {
-      const imageUrls = parseMarkdownForImages(props.text)
-
-      // Update dimensions for each image
-      imageUrls.forEach((imageUrl: GalleryItem) => {
-        updateImageDimensions(imageUrl.src)
-      })
-    })
-
     const shownText = computed(() => {
       if (showFullText.value) {
         return props.text
@@ -148,36 +108,13 @@ export default defineComponent({
       toggleShowFullText,
       shouldShowMoreButton
     }
-  },
-  methods: {
-    handleImageClick(event: any) {
-      if (this.disableGallery) {
-        return
-      }
-      if (event.target.tagName === 'IMG') {
-        const clickedSrc = event.target.src
-
-        // Find index of clicked image in embeddedImages array
-        const clickedIndex = this.embeddedImages.findIndex(
-          (image: GalleryItem) => image.href === clickedSrc
-        )
-
-        // Open Gallery with clickedIndex highlighted
-        const lightbox = setGallery({
-          dataSource: this.embeddedImages,
-          wheelToZoom: true
-        })
-
-        lightbox.loadAndOpen(clickedIndex)
-      }
-    }
   }
 })
 </script>
 
 <template>
   <div class="w-full">
-    <v-md-preview :text="shownText" @click="handleImageClick($event)" />
+    <v-md-preview :text="shownText" />
     <button
       v-if="shouldShowMoreButton"
       class="mb-8 text-sm text-blue-600 hover:underline"
