@@ -90,7 +90,7 @@ export default defineComponent({
       <!-- {{ `Posted ${relativeTime}` }} -->
 
       <div v-if="post?.content" class="my-2 border-gray-400">
-        <MarkdownPreview :text="post.content" :disable-gallery="true" :word-limit="50" />
+        <MarkdownPreview :text="post.content" :disable-gallery="true" :word-limit="100" />
       </div>
     </li>
   </ul>
