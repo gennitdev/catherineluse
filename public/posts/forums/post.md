@@ -1,4 +1,4 @@
-### List of all forums
+Welcome to part 3 of my blog post series! This time, we'll explore the forum list features. These allow you to find and navigate forums easily, especially on mobile devices.
 
 Here is the list of forums at mobile width:
 

@@ -42,9 +42,9 @@ export default defineComponent({
 
     const loadPosts = async () => {
       const postList: Post[] = [
-        { title: 'Multiforum demo: Event Search', slug: 'events' },
-        { title: 'Multiforum demo: Discussions', slug: 'discussions' },
-        { title: 'Multiforum demo: Finding forums', slug: 'forums' }
+        { title: 'Multiforum Demo Part 1: Event Search', slug: 'events' },
+        { title: 'Multiforum Demo Part 2: Discussions', slug: 'discussions' },
+        { title: 'Multiforum Demo Part 3: Finding forums', slug: 'forums' }
       ]
 
       const loadedPosts = await Promise.all(

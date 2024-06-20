@@ -211,5 +211,8 @@ li {
   margin-bottom: 0.5rem !important;
 }
 
-/* p within nested list should have no margin */
+h2 {
+  font-size: 1.2rem !important;
+  margin-top: 1.5rem !important;
+} /* p within nested list should have no margin */
 </style>

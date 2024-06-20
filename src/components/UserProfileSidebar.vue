@@ -55,7 +55,7 @@ export default defineComponent({
         <v-icon name="px-pin" /> {{ profile.contact.location }}
       </p>
 
-      <div class="mt-4 flex flex-col gap-4">
+      <div class="flex flex-col gap-4">
         <h2 class="text-lg font-bold text-gray-400">About</h2>
         <p v-if="profile?.intro" class="text-gray-400 text-sm">{{ profile.intro }}</p>
         <h2 class="text-lg font-bold text-gray-400">Contact</h2>

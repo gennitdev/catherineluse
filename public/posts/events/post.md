@@ -6,7 +6,7 @@ Hey everyone! I'm really excited to share my latest side project with you—a lo
 
 Anyone can post events on the platform, with a title, description, and address. If you include an address, the event will show up on a map so you can see what's happening nearby. There are also features for filtering events by time and forum, highlighting events on the map, and viewing detailed information about each event. My goal was to make it simple and effective for everyone to find and share local events.
 
-In this blog post, I'll show you the different features of the tool with some screenshots. Hopefully, it will give you a good idea of how you can use it to discover and share events in your community. Let's get started!
+In this blog post, I'll show you the different features of the tool with some screenshots. It's still a work on progress, but I plan to host it soon. Until it's hosted, hopefully this walkthrough can give you a good idea of how my project can be used to discover and share events.
 
 ## Highlighting events on the map
 
