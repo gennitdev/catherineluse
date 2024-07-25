@@ -25,7 +25,7 @@ export default defineComponent({
           location: 'Phoenix, AZ'
         }
       },
-      resumeUrl: '/CatherineLuseResumeJune2024.pdf',
+      resumeUrl: '/CatherineLuseJuly2024Resume.pdf',
       smAndDown
     }
   }
