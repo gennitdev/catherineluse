@@ -1,4 +1,4 @@
-Hey everyone! I'm really excited to share my latest side project with you—a local event finder tool that I've been working on. It's designed to help people find and promote events happening around them. Whether you're a local business owner wanting to attract more customers to your bar or coffee shop, or just someone who wants to share your love for rock music, trivia, or bird watching, this tool should make it easier.
+Hey everyone! I'm excited to share my latest side project with you - a local event finder tool that I've been working on. It's designed to help people find and promote events happening around them. Whether you're a local business owner wanting to attract more customers to your bar or coffee shop, or just someone who wants to share your love for rock music, trivia, or bird watching, this tool should make it easier.
 
 ![All in person events filtered by next weekend](/posts/events/all-in-person-events-filtered-by-next-weekend.png)
 

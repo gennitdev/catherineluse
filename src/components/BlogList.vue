@@ -44,6 +44,11 @@ export default defineComponent({
     const loadPosts = async () => {
       const postList: Post[] = [
         {
+                    title: 'Video Demo of Multiforum',
+                    slug: 'video',
+                    createdAt: '2024-07-25T23:10:08.831Z'
+                },
+        {
           title: 'Multiforum Demo Part 1: Event Search',
           slug: 'events',
           createdAt: '2024-06-20T00:34:16.027Z'
