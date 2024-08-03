@@ -1,3 +1,8 @@
+---
+title: About Multiforum
+createdAt: "2024-08-03T02:30:36.714Z"
+---
+
 This is a work in progress that intended to be an open-source, self-hosted platform that lets you host multiple forums.
 
 Each forum has two sections, a discussion section and a calendar. In the discussion section, content

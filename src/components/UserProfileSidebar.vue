@@ -14,7 +14,7 @@ export default defineComponent({
       },
       profile: {
         name: 'Catherine Luse',
-        profilePicURL: '/images/square-headshot-medium-size.jpeg',
+        profilePicURL: '/images/square-headshot-medium-size.png',
         intro: `Welcome to my personal website! I am a fullstack software engineer with a frontend focus. I am a lifelong learner and passionate about writing software that helps people, especially in the area of humane technology.`,
         contact: {
           phone: '+1 (623) 853-7028',
@@ -25,7 +25,7 @@ export default defineComponent({
           location: 'Phoenix, AZ'
         }
       },
-      resumeUrl: '/CatherineLuseJuly2024Resume.pdf',
+      resumeUrl: '/CatherineLuseAugust2024Resume.pdf',
       smAndDown
     }
   }
@@ -34,11 +34,11 @@ export default defineComponent({
 
 <template>
   <div
-    class="sticky top-0 overflow-auto rounded-lg px-8 py-12"
+    class="sticky top-0 rounded-lg px-8 py-12"
     :class="[!smAndDown ? 'max-h-screen' : '']"
   >
-    <div class="mb-4 mt-6 flex flex-col gap-2">
-      <div class="overflow-hidden border" style="height: 100px; width: 100px; border-radius: 50%">
+    <div class="mb-4 flex flex-col gap-2">
+      <div class="border" style="height: 125px; width: 125px; border-radius: 50%">
         <img
           :src="profile.profilePicURL"
           :alt="'Picture of Catherine Luse'"

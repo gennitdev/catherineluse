@@ -11,7 +11,7 @@ export default defineComponent({
             },
             profile: {
                 name: 'Catherine Luse',
-                profilePicURL: '/images/square-headshot-medium-size.jpeg',
+                profilePicURL: '/images/square-headshot-medium-size.png',
                 intro: `Welcome to my personal website! I am a fullstack software engineer with a frontend focus. I am a lifelong learner and passionate about writing software that helps people, especially in the area of humane technology.`,
                 contact: {
                     phone: '+1 (623) 853-7028',
@@ -22,7 +22,7 @@ export default defineComponent({
                     location: 'Phoenix, AZ'
                 }
             },
-            resumeUrl: '/CatherineLuseResumeJune2024.pdf',
+            resumeUrl: '/CatherineLuseAugust2024Resume.pdf',
             smAndDown
         };
     }
@@ -36,10 +36,10 @@ function __VLS_template() {
     let __VLS_components;
     let __VLS_styleScopedClasses;
     let __VLS_resolvedLocalAndGlobalComponents;
-    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("sticky top-0 overflow-auto rounded-lg px-8 py-12") }, ...{ class: (([!__VLS_ctx.smAndDown ? 'max-h-screen' : ''])) }, });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("sticky top-0 rounded-lg px-8 py-12") }, ...{ class: (([!__VLS_ctx.smAndDown ? 'max-h-screen' : ''])) }, });
     __VLS_styleScopedClasses = ([!smAndDown ? 'max-h-screen' : '']);
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("mb-4 mt-6 flex flex-col gap-2") }, });
-    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("overflow-hidden border") }, ...{ style: ({}) }, });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("border") }, ...{ style: ({}) }, });
     __VLS_elementAsFunction(__VLS_intrinsicElements.img)({ src: ((__VLS_ctx.profile.profilePicURL)), alt: (('Picture of Catherine Luse')), ...{ class: ("object-cover") }, ...{ style: ({}) }, });
     // @ts-ignore
     [smAndDown, profile,];
@@ -207,7 +207,6 @@ function __VLS_template() {
     if (typeof __VLS_styleScopedClasses === 'object' && !Array.isArray(__VLS_styleScopedClasses)) {
         __VLS_styleScopedClasses['sticky'];
         __VLS_styleScopedClasses['top-0'];
-        __VLS_styleScopedClasses['overflow-auto'];
         __VLS_styleScopedClasses['rounded-lg'];
         __VLS_styleScopedClasses['px-8'];
         __VLS_styleScopedClasses['py-12'];
@@ -216,7 +215,6 @@ function __VLS_template() {
         __VLS_styleScopedClasses['flex'];
         __VLS_styleScopedClasses['flex-col'];
         __VLS_styleScopedClasses['gap-2'];
-        __VLS_styleScopedClasses['overflow-hidden'];
         __VLS_styleScopedClasses['border'];
         __VLS_styleScopedClasses['object-cover'];
         __VLS_styleScopedClasses['mt-4'];

@@ -22,6 +22,7 @@
     "graphql-tag": "^2.12.6",
     "highlight.js": "^11.9.0",
     "identicon.js": "^2.3.3",
+    "js-yaml": "^4.1.0",
     "luxon": "^3.4.4",
     "markdown-it": "^14.1.0",
     "oh-vue-icons": "^1.0.0-rc3",

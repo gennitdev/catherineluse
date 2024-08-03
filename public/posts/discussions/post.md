@@ -1,3 +1,8 @@
+---
+title: "Multiforum Demo Part 2: Discussions"
+createdAt: "2024-06-20T00:34:16.027Z"
+---
+
 Welcome back! In this second part of my post, I'm diving into the discussion features within forums. Forums can host both events and discussions, making them ideal for communities that would like to have one foot in the real world and one foot in the online world.
 
 Let's take a look at how these discussion features work. Below, you'll find some screenshots that show the discussion detail pages, discussion lists, and forums that might focus solely on discussions without any events.

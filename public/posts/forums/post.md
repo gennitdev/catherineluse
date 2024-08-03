@@ -1,3 +1,8 @@
+---
+title: "Multiforum Demo Part 3: Finding forums"
+createdAt: "2024-06-20T00:34:16.027Z"
+---
+
 Welcome to part 3 of my blog post series! This time, we'll explore the forum list features. These allow you to find and navigate forums easily, especially on mobile devices.
 
 Here is the list of forums at mobile width:
@@ -14,7 +19,6 @@ The forum list can be filtered by search terms as well:
 
 ## Recently visited forums
 
-If you click the menu button on the top left of any page, it shows recently visited forums
-to support easy context switching.
+If you click the menu button on the top left of any page, it shows recently visited forums to support easy context switching.
 
 ![Recently visited forums](/posts/forums/recently-visited-forums.png)

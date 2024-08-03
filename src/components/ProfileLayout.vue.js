@@ -11,7 +11,7 @@ export default defineComponent({
     setup() {
         const route = useRoute();
         const profile = {
-            profilePicURL: '/posts/sample-post/square-headshot-medium-size.jpeg',
+            profilePicURL: '/posts/sample-post/square-headshot-medium-size.png',
             displayName: 'Catherine Luse'
         };
         const { smAndDown } = useDisplay();

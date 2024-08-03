@@ -13,7 +13,7 @@ export default defineComponent({
     setup() {
         const route = useRoute();
         const profile = {
-            profilePicURL: '/images/square-headshot-medium-size.jpeg',
+            profilePicURL: '/images/square-headshot-medium-size.png',
             displayName: 'Catherine Luse'
         };
         const { smAndDown } = useDisplay();
@@ -33,7 +33,7 @@ export default defineComponent({
             const postList = [
                 {
                     title: 'Video Demo of Multiforum',
-                    slug: 'video_demo',
+                    slug: 'video',
                     createdAt: '2024-07-25T23:10:08.831Z'
                 },
                 {
@@ -99,7 +99,7 @@ function __VLS_template() {
         const __VLS_1 = __VLS_asFunctionalComponent(__VLS_0, new __VLS_0({ to: (({ name: 'BlogPost', params: { slug: post.slug } })), }));
         const __VLS_2 = __VLS_1({ to: (({ name: 'BlogPost', params: { slug: post.slug } })), }, ...__VLS_functionalComponentArgsRest(__VLS_1));
         ({}({ to: (({ name: 'BlogPost', params: { slug: post.slug } })), }));
-        __VLS_elementAsFunction(__VLS_intrinsicElements.h2, __VLS_intrinsicElements.h2)({ ...{ class: ("cursor-pointer hover:text-gray-500 font-bold text-lg") }, });
+        __VLS_elementAsFunction(__VLS_intrinsicElements.h2, __VLS_intrinsicElements.h2)({ ...{ class: ("cursor-pointer hover:text-gray-500 font-bold text-lg text-blue-500") }, });
         (post.title);
         // @ts-ignore
         [posts,];
@@ -135,6 +135,7 @@ function __VLS_template() {
         __VLS_styleScopedClasses['hover:text-gray-500'];
         __VLS_styleScopedClasses['font-bold'];
         __VLS_styleScopedClasses['text-lg'];
+        __VLS_styleScopedClasses['text-blue-500'];
         __VLS_styleScopedClasses['text-gray-500'];
         __VLS_styleScopedClasses['my-2'];
         __VLS_styleScopedClasses['border-gray-400'];
