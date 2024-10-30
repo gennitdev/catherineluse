@@ -37,23 +37,9 @@ export default defineComponent({
     <TopBanner />
     <div class="flex justify-center">
       <div class="max-w-7xl">
-        <div>
-          <article class="relative z-0 flex-1 focus:outline-none xl:order-last">
-            <v-row class="flex flex-row">
-              <v-col :cols="smAndDown ? 12 : 4" class="left-column">
-                <UserProfileSidebar />
-              </v-col>
-              <v-col
-                :class="[!smAndDown ? 'px-12' : '']"
-                :cols="!smAndDown ? 8 : 12"
-                class="right-column"
-              >
-                <v-container fluid>
-                  <router-view />
-                </v-container>
-              </v-col>
-            </v-row>
-          </article>
+        <div :class="[smAndDown ? 'flex-col' : 'flex']">
+          <UserProfileSidebar class="max-w-sm" />
+          <router-view />
         </div>
       </div>
     </div>
