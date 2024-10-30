@@ -62,6 +62,9 @@ export default defineComponent({
     const loadPosts = async () => {
       const postList: Post[] = [
         {
+          slug: 'oct-2024-update'
+        },
+        {
           slug: 'video'
         },
         {
