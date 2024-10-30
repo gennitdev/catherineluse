@@ -101,7 +101,7 @@ export default defineComponent({
             <ul class="list-disc ml-6">
               <li class="underline">
                 <a
-                  href="https://github.com/gennit-project/multiforum-frontend"
+                  href="https://github.com/gennitdev/multiforum-nuxt"
                   target="_blank"
                   rel="noopener noreferrer"
                   >Multiforum Frontend GitHub Repository
