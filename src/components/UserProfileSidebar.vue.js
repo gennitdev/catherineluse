@@ -22,7 +22,7 @@ export default defineComponent({
                     location: 'Phoenix, AZ'
                 }
             },
-            resumeUrl: '/CatherineLuseAugust2024Resume.pdf',
+            resumeUrl: '/CatherineLuseResumeNovember.pdf',
             smAndDown
         };
     }
@@ -190,7 +190,7 @@ function __VLS_template() {
         const __VLS_47 = __VLS_pickFunctionalComponentCtx(__VLS_42, __VLS_44);
     }
     __VLS_elementAsFunction(__VLS_intrinsicElements.li, __VLS_intrinsicElements.li)({});
-    __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({ href: ((__VLS_ctx.resumeUrl)), download: ("resume.pdf"), });
+    __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({ href: ((__VLS_ctx.resumeUrl)), download: ("CatherineLuseResume.pdf"), });
     __VLS_elementAsFunction(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)({});
     const __VLS_48 = {}.VIcon;
     ({}.VIcon);
