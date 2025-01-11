@@ -1,15 +1,13 @@
 ---
-title: "Multiforum Demo Part 1: Event Search"
+title: "Multiforum Demo Part 3: Event Search"
 createdAt: "2024-06-20T00:34:16.027Z"
 ---
 
-Hey everyone! I'm excited to share my latest side project with you - a local event finder tool that I've been working on. It's designed to help people find and promote events happening around them. Whether you're a local business owner wanting to attract more customers to your bar or coffee shop, or just someone who wants to share your love for rock music, trivia, or bird watching, this tool should make it easier.
+Anyone can post events on the platform, with a title, description, and address. If you include an address, the event will show up on a map so you can see what's happening nearby. There are also features for filtering events by time and forum, highlighting events on the map, and viewing detailed information about each event. My goal was to make it simple and effective for everyone to find and share local events.
 
 ![All in person events filtered by next weekend](/posts/events/all-in-person-events-filtered-by-next-weekend.png)
 
 > Note: The above screenshot shows how it looks if you filter all in-person events by 'next weekend.' If today is during the week of Monday, June 17, then the events are filtered to show events on Saturday the 22nd and Sunday the 23rd:
-
-Anyone can post events on the platform, with a title, description, and address. If you include an address, the event will show up on a map so you can see what's happening nearby. There are also features for filtering events by time and forum, highlighting events on the map, and viewing detailed information about each event. My goal was to make it simple and effective for everyone to find and share local events.
 
 In this blog post, I'll show you the different features of the tool with some screenshots. It's still a work on progress, but I plan to host it soon. Until it's hosted, hopefully this walkthrough can give you a good idea of how my project can be used to discover and share events.
 

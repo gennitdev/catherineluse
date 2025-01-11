@@ -20,7 +20,7 @@ import { OhVueIcon, addIcons } from 'oh-vue-icons'
 import VMdPreview from '@kangc/v-md-editor/lib/preview'
 import '@kangc/v-md-editor/lib/style/base-editor.css'
 import githubTheme from '@kangc/v-md-editor/lib/theme/github.js'
-import '@kangc/v-md-editor/lib/theme/style/vuepress.css'
+import '@kangc/v-md-editor/lib/theme/style/github.css'
 
 import hljs from 'highlight.js'
 
@@ -39,7 +39,8 @@ const vuetify = createVuetify({
 })
 
 VMdPreview.use(githubTheme, {
-  Hljs: hljs
+  Hljs: hljs,
+  previewClass: 'markdown-body'
 })
 const app = createApp(App)
 app.component('v-icon', OhVueIcon)

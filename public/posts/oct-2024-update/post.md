@@ -14,9 +14,13 @@ Here's the new event search layout with the filters on top instead of on the lef
 
 I like this arrangement more as it looks more symmetrical, so it's more aesthetically pleasing and has better glanceability; I think this makes it easier to understand the search and filtering functionality at first glance. Putting the forum picker on the left of the search bar helps it become more prominent, which is important because on this platform, everything is organized into forums.
 
-I also improved the forum picker. Before, you couldn't search it and if there were many forums in the platforms, it looked too disorganized and huge. Here's what it looked like before:
+I also improved the forum picker. Before, you couldn't search it and if there were many forums in the platforms, it looked too disorganized and huge.
+
+## Before
 
 ![Filtering map by multiple forums](/posts/events/filtering-map-by-multiple-forums.png)
+
+## After
 
 The new version lets you search the forum picker to filter down the options and select one or multiple forums with check boxes:
 

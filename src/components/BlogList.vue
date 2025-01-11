@@ -62,6 +62,12 @@ export default defineComponent({
     const loadPosts = async () => {
       const postList: Post[] = [
         {
+          slug: 'jan-2025-moderation'
+        },
+        {
+          slug: 'jan-2025-voting-feedback'
+        },
+        {
           slug: 'oct-2024-update'
         },
         {

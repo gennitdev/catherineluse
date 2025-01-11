@@ -1,8 +1,6 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { setGallery } from 'vue-preview-imgs'
-import MarkdownIt from 'markdown-it'
-import { ref, watchEffect } from 'vue'
+import { ref } from 'vue'
 
 type GalleryItem = {
   href: string
@@ -10,38 +8,6 @@ type GalleryItem = {
   thumbnail: string
   width: number
   height: number
-}
-
-function calculateAspectRatioFit(
-  srcWidth: number,
-  srcHeight: number,
-  maxWidth: number,
-  maxHeight: number
-) {
-  const ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight)
-  return { width: srcWidth * ratio, height: srcHeight * ratio }
-}
-
-function parseMarkdownForImages(text: string) {
-  const md = new MarkdownIt()
-  const renderedText = md.render(text)
-  const regex = /src="([^"]*)"/g
-  const images: GalleryItem[] = []
-  let match
-
-  while ((match = regex.exec(renderedText)) !== null) {
-    const src = match[1]
-    const galleryItem: GalleryItem = {
-      href: src,
-      src,
-      thumbnail: src,
-      width: window.innerWidth,
-      height: window.innerHeight
-    }
-    images.push(galleryItem)
-  }
-
-  return images
 }
 
 export default defineComponent({
@@ -113,7 +79,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full markdown-body">
     <v-md-preview :text="shownText" />
     <button
       v-if="shouldShowMoreButton"
@@ -143,6 +109,7 @@ ul {
 
 li {
   margin-bottom: 0.5rem !important;
+  margin-left: 1.5rem !important;
 }
 
 h2 {

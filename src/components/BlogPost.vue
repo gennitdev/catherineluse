@@ -1,21 +1,23 @@
 <script lang="ts">
 import { defineComponent, ref, watch, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import MarkdownIt from 'markdown-it'
 import axios from 'axios'
 import yaml from 'js-yaml'
+import MarkdownPreview from './MarkdownPreview.vue' // Adjust the import path as needed
 
 export default defineComponent({
+  components: {
+    MarkdownPreview
+  },
   setup() {
     const route = useRoute()
-    const content = ref('')
+    const markdownContent = ref('')
     const title = ref('')
     const createdAt = ref('')
 
     const loadPost = async (slug: string) => {
       try {
         const response = await axios.get(`/posts/${slug}/post.md`)
-        const md = new MarkdownIt()
         const rawContent = response.data
 
         // Extract front matter and markdown content
@@ -24,9 +26,9 @@ export default defineComponent({
           const frontMatter = yaml.load(match[1])
           title.value = frontMatter.title
           createdAt.value = frontMatter.createdAt
-          content.value = md.render(match[2])
+          markdownContent.value = match[2] // Store raw markdown instead of rendered HTML
         } else {
-          content.value = md.render(rawContent)
+          markdownContent.value = rawContent // Store raw markdown
         }
       } catch (error) {
         console.error('Error loading post:', error)
@@ -50,7 +52,7 @@ export default defineComponent({
     })
 
     return {
-      content,
+      markdownContent,
       title,
       createdAt
     }
@@ -68,6 +70,10 @@ export default defineComponent({
       <h1 class="text-2xl font-bold">{{ title }}</h1>
       <p class="text-gray-500">{{ new Date(createdAt).toLocaleDateString() }}</p>
     </div>
-    <div v-html="content"></div>
+    <MarkdownPreview 
+      :text="markdownContent"
+      :disable-gallery="true"
+      :word-limit="100"
+    />
   </div>
 </template>
