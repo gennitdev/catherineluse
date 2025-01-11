@@ -31,7 +31,7 @@ On the detail page of a post, you can see that next to the upvote button, thereâ
 
 This thumbs-down button is not a downvote. Clicking it opens a modal where you can type constructive feedback into a text box. You canâ€™t leave the box blank.
 
-In the actual app, if you click on an image that is embedded in the body of a post like in this example, it will open in an overlay with the full-size image. But some people find it annoying when they find pictures of text, especially if they are vision impaired or blind. So in this example, let's say you don't like the submission and you want to give feedback to that effect. So you click the thumbs-down button and the feedback modal appears:
+In the actual app, if you click on an image that is embedded in the body of a post like in [this example](https://www.topical.space/forums/chatGPT/discussions/3e4e6302-45c0-4f24-8b9b-d98bc99363a1), it will open in an overlay with the full-size image. But some people find it annoying when they find pictures of text, especially if they are vision impaired or blind. So in this example, let's say you don't like the submission and you want to give feedback to that effect. So you click the thumbs-down button and the feedback modal appears:
 
 ![Screenshot of the feedback modal which warns that feedback is intended to be a helpful tool for the author.](/posts/jan-2025-voting-feedback/feedback-modal.png)
 
