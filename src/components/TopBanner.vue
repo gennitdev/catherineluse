@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const hostedDemoLink = 'https://topical.space/map?timeShortcut=PAST_EVENTS'
+const hostedDemoLink = 'https://topical.space/map/search?timeShortcut=PAST_EVENTS'
 </script>
 
 <template>
