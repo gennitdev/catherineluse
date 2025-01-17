@@ -5,8 +5,7 @@ createdAt: "2025-01-16T21:25:10.072Z"
 
 ## Introduction
 
-Recently I thought to myself, "Since my side project is linked on my resume and LinkedIn profile,
-it would probably be bad if somebody uploaded porn to it."
+Recently I thought to myself, "Since my side project is linked on my resume and LinkedIn profile, it would probably be bad if somebody uploaded porn to it."
 
 Content filtering is not a serious concern to me at this time because my app has no users other than myself. But with that said, it's still technically possible for a random stranger to log into topical.space, make an account and upload pictures of... whatever. So I felt a little bit nervous about tying my professional reputation to a website that allows user-generated content without a filter.
 
@@ -27,34 +26,24 @@ For context, here's how image uploads currently work in topical.space:
 
 ## Implementing the Content Filter
 
-So I started researching automated image scanners, with the intent of trying to make it
-difficult for any potentially explicit user-generated content to see the light of day. I figured that since I already hosted images on GCS (Google Cloud Storage), I may as well try another Google service, [SafeSearch,](https://cloud.google.com/vision/docs/detecting-safe-search) for image scanning.
+So I started researching automated image scanners, with the intent of trying to make it difficult for any potentially explicit user-generated content to see the light of day. I figured that since I already hosted images on GCS (Google Cloud Storage), I may as well try another Google service, [SafeSearch,](https://cloud.google.com/vision/docs/detecting-safe-search) for image scanning.
 
 
 ### Initial Considerations
 
-At first I thought that when the client calls createSignedStorageURL, that should trigger
-an event that causes my backend app to poll the signed storage URL on GCS to see if an
-image was uploaded there. If it existed, then the backend would order a scan on the image at
-that URL. If it didn't exist, the polling would eventually time out.
+At first I thought that when the client calls createSignedStorageURL, that should trigger an event that causes my backend app to poll the signed storage URL on GCS to see if an image was uploaded there. If it existed, then the backend would order a scan on the image at that URL. If it didn't exist, the polling would eventually time out.
 
-But then my question was "How long should the backend poll GCS until it times out?" I didn't like
-the idea of setting the time to an arbitrary limit like 30 seconds or a minute, because then
-an image could bypass the content filter if the user had a slow connection and it took
-a long time to upload the picture.
+But then my question was "How long should the backend poll GCS until it times out?" I didn't like the idea of setting the time to an arbitrary limit like 30 seconds or a minute, because then an image could bypass the content filter if the user had a slow connection and it took a long time to upload the picture.
 
 ### The GCS Event-Based Solution
 
-So then I asked another question: "How hard would it be to make GCS itself trigger the scan
-as soon as an image is uploaded?"
+So then I asked another question: "How hard would it be to make GCS itself trigger the scan as soon as an image is uploaded?"
 
-And the answer is, it's easy! With a few commands, it's possible to make an event
-get emitted to Google's event bus system when a file is uploaded to GCS. And it is also easy to use a Google Cloud Function that listens for that event and executes when that event happens.
+And the answer is, it's easy! With a few commands, it's possible to make an event get emitted to Google's event bus system when a file is uploaded to GCS. And it is also easy to use a Google Cloud Function that listens for that event and executes when that event happens.
 
 ## Setting Up the Cloud Function
 
-Since I already had the gcloud CLI installed, I set up the content filter with gcloud commands,
-which is a better user experience than clicking around in the cloud console.
+Since I already had the gcloud CLI installed, I set up the content filter with gcloud commands, which is a better user experience than clicking around in the cloud console.
 
 ### Creating the Event Pipeline
 
@@ -83,9 +72,7 @@ gcloud functions deploy scanImage \
 
 ### Implementing the Cloud Function
 
-Then I made the cloud function in a local directory. This cloud function
-is what scans the newly uploaded file and will delete the image
-if it doesn't pass the content filter. The Google SafeSearch scanner responds in this format:
+Then I made the cloud function in a local directory. This cloud function is what scans the newly uploaded file and will delete the image if it doesn't pass the content filter. The Google SafeSearch scanner responds in this format:
 
 ```json
 {
@@ -103,9 +90,7 @@ if it doesn't pass the content filter. The Google SafeSearch scanner responds in
 }
 ```
 
-Therefore, the cloud function checks the `safeSearchAnnotation` in the SafeSearch
-response to decide whether to delete the file or not. I set up the file structure
-of my cloud function like this:
+Therefore, the cloud function checks the `safeSearchAnnotation` in the SafeSearch response to decide whether to delete the file or not. I set up the file structure of my cloud function like this:
 
 ```
 scanImage
@@ -180,8 +165,7 @@ exports.scanImage = async (event, context) => {
 
 ### Deploying the Function
 
-Then, with my terminal in the same directory as my new cloud function code, I deployed
-the cloud function with this command:
+Then, with my terminal in the same directory as my new cloud function code, I deployed the cloud function with this command:
 
 ```
 gcloud functions deploy scanImage \
@@ -193,10 +177,7 @@ gcloud functions deploy scanImage \
 
 ## Testing the Content Filter
 
-I was glad to learn that this approach was possible, because from a technical or architectural
-perspective, it's nifty. With only four commands and a few lines of code, my app already has a
-basic level of protection from vandalism. The best thing about it is that I never had to change
-a single line of code in my app, because the content filter is handled entirely on the GCP side.
+I was glad to learn that this approach was possible, because from a technical or architectural perspective, it's nifty. With only four commands and a few lines of code, my app already has a basic level of protection from vandalism. The best thing about it is that I never had to change a single line of code in my app, because the content filter is handled entirely on the GCP side.
 
 Then there was only one thing left to do: test it to make sure that it works.
 
@@ -222,38 +203,29 @@ Now, if you're like me, when you see that SafeSearch returns a response like thi
 
 The top question on my mind was, "Where does it draw the line? What's the difference between 'LIKELY' and 'VERY_LIKELY' racy?"
 
-I checked the reference documentation for SafeSearchAnnotation, which is located [here.](https://cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse#safesearchannotation) As you can see, the reference material is fairly sparse.
-It defines "racy" as the following:
+I checked the reference documentation for SafeSearchAnnotation, which is located [here.](https://cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse#safesearchannotation) As you can see, the reference material is fairly sparse. It defines "racy" as the following:
 
 > Likelihood that the request image contains racy content. Racy content may include (but is not limited to) skimpy or sheer clothing, strategically covered nudity, lewd or provocative poses, or close-ups of sensitive body areas.
 
 ### (Almost) Real-World Testing
 
-These reference materials did not contain what I was really looking for, which was a helpful chart
-with three columns - POSSIBLE, LIKELY and VERY_LIKELY - with rows for adult, spoof, medical,
-violence and racy content, with an example picture in each table cell.
+These reference materials did not contain what I was really looking for, which was a helpful chart with three columns - POSSIBLE, LIKELY and VERY_LIKELY - with rows for adult, spoof, medical, violence and racy content, with an example picture in each table cell.
 
 I wonder why they did not include that???
 
-Jokes aside, it became clear that the only way to really understand those labels is to test it with
-our own images. So in the following test, I wanted to both a) check if the new filter could successfully
-remove images and b) get an idea of where the dividing line is between different levels of raciness.
+Jokes aside, it became clear that the only way to really understand those labels is to test it with our own images. So in the following test, I wanted to both a) check if the new filter could successfully remove images and b) get an idea of where the dividing line is between different levels of raciness.
 
 So I decided to test the filter with racy content. I felt uncomfortable about using pictures of real people for the purpose of testing my content filter, so I decided this would be a good time to use [Grok](https://x.com/i/grok?focus=1) to generate racy images of fake people as test data.
 
-After requesting these AI images from Grok, I had two pictures in my test data. Test picture 1 is
-somewhat of a milder level of raciness, while test picture 2 is more explicit.
+After requesting these AI images from Grok, I had two pictures in my test data. Test picture 1 is somewhat of a milder level of raciness, while test picture 2 is more explicit.
 
 Test picture 1:
 
 ![Woman posing while wearing lingerie](/posts/basic-content-filter/test-picture-1.jpg)
 
-
 Test picture 2:
 
-
 [The second test picture was of a similar photo, in which a woman is also wearing lingerie, while her hand was implied to be doing a sexual act outside of the frame.]
-
 
 To test it, I ran my database locally, created a forum `image_test` and a test post called `Image test.` In Multiforum, the text editor is similar to the text editor in GitHub, which lets you drag and drop images into the text editor to upload them, so that you can easily interleave images in text. So to do this, I dragged the test pictures 1 and 2 into the text editor, and you can see here that they were uploaded because the new image URLs are included there in the markdown:
 
