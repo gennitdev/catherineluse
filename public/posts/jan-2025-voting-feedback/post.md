@@ -51,6 +51,7 @@ There are some aspects of this feature that are still unfinished:
 
 - I haven't added any notifications yet, but the idea is that if someone gives feedback on your post, you will get a notification that says you got feedback, and it will link to the feedback page for your post. At that point you will be able to read the feedback or just ignore it.
 - If feedback is rude or inflammatory, it will be able to be reported just like any other comment.
+- Individual forums will be able to turn off the feature completely.
 
 If the author made the mistake in good faith, the idea is that they'd edit their post based on the feedback, as opposed to just being left to wonder why people don't like their post.
 

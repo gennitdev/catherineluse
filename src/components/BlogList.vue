@@ -62,6 +62,9 @@ export default defineComponent({
     const loadPosts = async () => {
       const postList: Post[] = [
         {
+          slug: 'basic-content-filter'
+        },
+        {
           slug: 'jan-2025-moderation'
         },
         {
@@ -115,17 +118,17 @@ export default defineComponent({
     <li
       v-for="post in posts"
       :key="post.slug"
-      class="relative my-1 flex-col rounded-lg border bg-white py-6 px-8"
+      class="relative my-1 flex-col rounded-lg border bg-white px-6"
     >
       <router-link :to="{ name: 'BlogPost', params: { slug: post.slug } }">
-        <h2 class="cursor-pointer hover:text-gray-500 font-bold text-lg text-blue-500">
+        <h2 class="cursor-pointer hover:text-gray-500 text-2xl text-blue-500">
           {{ post.title }}
         </h2>
       </router-link>
       <span class="text-gray-500">{{ `Catherine posted ${post.createdAt ? relativeTime(post.createdAt): ''}` }}</span>
 
       <div v-if="post?.content" class="my-2 border-gray-400">
-        <MarkdownPreview :text="post.content" :disable-gallery="true" :word-limit="100" />
+        <MarkdownPreview :text="post.content" :disable-gallery="true" :word-limit="50" />
       </div>
     </li>
   </ul>

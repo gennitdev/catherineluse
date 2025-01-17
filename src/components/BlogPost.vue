@@ -64,10 +64,10 @@ export default defineComponent({
   <div>
     <router-link to="/" class="text-blue-500 hover:underline flex items-center">
       <v-icon name="px-chevron-left" />
-      <span class="ml-1">Back to list</span>
+      <span class="ml-1 my-4">Back to list</span>
     </router-link>
     <div v-if="title">
-      <h1 class="text-2xl font-bold">{{ title }}</h1>
+      <h1 class="text-3xl">{{ title }}</h1>
       <p class="text-gray-500">{{ new Date(createdAt).toLocaleDateString() }}</p>
     </div>
     <MarkdownPreview 

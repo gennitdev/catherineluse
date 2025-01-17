@@ -36,10 +36,14 @@ export default defineComponent({
   <div class="flex-col">
     <TopBanner />
     <div class="flex justify-center">
-      <div class="max-w-7xl">
-        <div :class="[smAndDown ? 'flex-col' : 'flex']">
-          <UserProfileSidebar class="max-w-sm" />
-          <router-view />
+      <div class="max-w-7xl w-full px-2">
+        <div class="flex flex-col lg:flex-row w-full">
+          <div class="w-full lg:w-80 lg:shrink-0">
+            <UserProfileSidebar />
+          </div>
+          <div class="flex-1 min-w-0">
+            <router-view />
+          </div>
         </div>
       </div>
     </div>
