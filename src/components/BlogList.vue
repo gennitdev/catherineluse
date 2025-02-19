@@ -62,6 +62,9 @@ export default defineComponent({
     const loadPosts = async () => {
       const postList: Post[] = [
         {
+          slug: 'immigration-video'
+        },
+        {
           slug: 'basic-content-filter'
         },
         {
@@ -125,7 +128,9 @@ export default defineComponent({
           {{ post.title }}
         </h2>
       </router-link>
-      <span class="text-gray-500">{{ `Catherine posted ${post.createdAt ? relativeTime(post.createdAt): ''}` }}</span>
+      <span class="text-gray-500">{{
+        `Catherine posted ${post.createdAt ? relativeTime(post.createdAt) : ''}`
+      }}</span>
 
       <div v-if="post?.content" class="my-2 border-gray-400">
         <MarkdownPreview :text="post.content" :disable-gallery="true" :word-limit="50" />
