@@ -33,10 +33,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div
-    class="sticky top-0 rounded-lg px-8 py-12"
-    :class="[!smAndDown ? 'max-h-screen' : '']"
-  >
+  <div class="sticky top-0 rounded-lg px-8 py-12" :class="[!smAndDown ? 'max-h-screen' : '']">
     <div class="mb-4 flex flex-col gap-2">
       <div class="border" style="height: 125px; width: 125px; border-radius: 50%">
         <img
@@ -59,7 +56,7 @@ export default defineComponent({
         <h2 class="text-lg font-bold text-gray-400">About</h2>
         <p v-if="profile?.intro" class="text-gray-400 text-sm">{{ profile.intro }}</p>
         <h2 class="text-lg font-bold text-gray-400">Contact</h2>
-        <ul class="text-gray-400 text-sm flex flex-col gap-1">
+        <ul class="text-gray-400 text-sm flex flex-col gap-1 -ml-6">
           <li v-if="profile.contact.phone" class="flex items -center gap-2">
             <v-icon name="px-device-phone" size="24" />
             <span>{{ profile.contact.phone }}</span>
