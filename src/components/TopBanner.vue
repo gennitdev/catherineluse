@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const hostedDemoLink = 'https://topical.space/map/search'
+const hostedDemoLink = 'https://topical.space/forums/cats/discussions'
 </script>
 
 <template>
