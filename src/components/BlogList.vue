@@ -62,6 +62,9 @@ export default defineComponent({
     const loadPosts = async () => {
       const postList: Post[] = [
         {
+          slug: 'notifications'
+        },
+        {
           slug: 'new-feature-wikis'
         },
         {
