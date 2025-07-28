@@ -83,7 +83,7 @@ export default defineComponent({
     <v-md-preview :text="shownText" />
     <button
       v-if="shouldShowMoreButton"
-      class="mb-8 text-sm text-blue-600 hover:underline"
+      class="pl-6 pb-8 text-sm text-blue-600 hover:underline"
       @click="toggleShowFullText"
     >
       {{ showFullText ? '...Show Less' : '...Show More' }}

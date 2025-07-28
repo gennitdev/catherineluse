@@ -127,10 +127,10 @@ export default defineComponent({
     <li
       v-for="post in posts"
       :key="post.slug"
-      class="relative my-1 flex-col rounded-lg border bg-white px-6"
+      class="relative my-1 flex-col border-b bg-white px-6"
     >
       <router-link :to="{ name: 'BlogPost', params: { slug: post.slug } }">
-        <h2 class="cursor-pointer hover:text-gray-500 text-2xl text-blue-500">
+        <h2 class="cursor-pointer hover:text-gray-500 text-2xl text-bold text-gray-600">
           {{ post.title }}
         </h2>
       </router-link>
@@ -138,7 +138,7 @@ export default defineComponent({
         `Catherine posted ${post.createdAt ? relativeTime(post.createdAt) : ''}`
       }}</span>
 
-      <div v-if="post?.content" class="my-2 border-gray-400">
+      <div v-if="post?.content" class="my-2 border-l-2 border-gray-200">
         <MarkdownPreview :text="post.content" :disable-gallery="true" :word-limit="50" />
       </div>
     </li>
