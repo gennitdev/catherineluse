@@ -148,11 +148,11 @@ CDC guarantees you won't lose events since they're captured at the database leve
 
 The architecture stays clean with notification logic isolated in its own service. TypeScript provides type safety, and each component can be tested independently.
 
-## The Complete Flow
+**The Complete Flow**
 
-1. **Comment created** → Neo4j CDC triggers `commentCreated` event
-2. **Event received** → Service fetches comment details and generates email content
-3. **Batch processing** → Single operation sends emails + creates in-app notifications
-4. **Graceful failures** → Email problems don't break in-app notifications
+1. **Comment created** → Neo4j CDC automatically triggers a `commentCreated` event when someone adds a comment
+2. **Event received** → The notification service receives this event, fetches the comment details, and generates the appropriate email content
+3. **Batch processing** → The system processes everything in batches, using a single operation to send emails and create in-app notifications simultaneously
+4. **Graceful failures** → When email problems occur, they don't affect the in-app notifications because these are handled as separate operations
 
-The key is batching - one SendGrid API call can notify hundreds of users, and email failures are isolated from the core notification system.
+The key advantage is batching - one SendGrid API call can notify hundreds of users at once, and email failures stay isolated from your core notification system.
