@@ -25,7 +25,6 @@ export default defineComponent({
           location: 'Phoenix, AZ'
         }
       },
-      resumeUrl: '/CatherineLuseResumeNovember.pdf',
       smAndDown
     }
   }
@@ -115,14 +114,6 @@ export default defineComponent({
                 </a>
               </li>
             </ul>
-          </li>
-          <li>
-            <a :href="resumeUrl" download="CatherineLuseResume.pdf">
-              <button>
-                <v-icon name="px-download" size="24" />
-                Download Resume
-              </button>
-            </a>
           </li>
         </ul>
       </div>
