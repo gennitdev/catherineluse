@@ -62,6 +62,9 @@ export default defineComponent({
     const loadPosts = async () => {
       const postList: Post[] = [
         {
+          slug: 'new-feature-clustering'
+        },
+        {
           slug: 'notifications'
         },
         {
