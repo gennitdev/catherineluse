@@ -145,7 +145,12 @@ export default defineComponent({
       }}</span>
 
       <div v-if="post?.content" class="my-2 border-l-2 border-gray-200">
-        <MarkdownPreview :text="post.content" :disable-gallery="true" :word-limit="50" />
+        <MarkdownPreview
+          :text="post.content"
+          :disable-gallery="true"
+          :word-limit="50"
+          :show-show-more="posts.indexOf(post) !== 0"
+        />
       </div>
     </li>
   </ul>
