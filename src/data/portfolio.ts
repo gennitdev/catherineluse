@@ -164,18 +164,24 @@ export const funPortfolio: PortfolioSection[] = [
     org: 'Personal full-stack project',
     period: '2019 – Present',
     body: [
-      'A community platform combining forums, wikis, event calendars, and file sharing for niche communities. Built with TypeScript, Vue 3 / Nuxt 3, Neo4j, Apollo GraphQL, and Node.js, with Node.js-based backend tests and Cypress end-to-end tests.'
+      'Multiforum is an open-source community platform where people create topic-focused forums that go beyond plain discussion threads. Each forum can host discussions, events, wikis, and downloadable files, and any piece of content can be cross-posted to several forums at once.',
+      'Discussions support voting and threaded comments; events offer calendar and map-based views for finding things nearby; wikis are collaborative documents with revision history; and downloads can be organized with forum-specific filters. Moderation is granular, with controls at both the individual forum and server level, and members can collect favorites into personal libraries.',
+      'The app is split into a Nuxt frontend and a separate GraphQL backend that talk exclusively over GraphQL, with data stored in Neo4j and authentication handled by Auth0.'
     ],
     techStack: [
       'TypeScript',
-      'Vue 3 / Nuxt 3',
+      'Nuxt 3 / Vue 3',
+      'Pinia',
+      'Tailwind CSS',
+      'GraphQL',
       'Neo4j',
-      'Apollo GraphQL',
       'Node.js',
+      'Auth0',
+      'Playwright',
       'Cypress'
     ],
     links: [
-      { label: 'GitHub', url: 'https://github.com/gennitdev/multiforum-nuxt' },
+      { label: 'GitHub', url: 'https://github.com/gennit-project/multiforum-nuxt' },
       { label: 'Live demo', url: 'https://topical.space' }
     ],
     album: [
@@ -207,9 +213,28 @@ export const funPortfolio: PortfolioSection[] = [
     org: 'Personal project',
     period: '',
     body: [
-      'Add a description of AI Beta Reader here.'
+      'AI Beta Reader is a local-first writing app that pairs manuscript management with AI-powered feedback. Authors organize books into chapters, parts, and sections in a responsive editor with live preview, while the app auto-generates structured chapter summaries that track plot points, characters, and events to keep continuity across a long manuscript.',
+      'It can produce contextual reviews in several styles — fan commentary, editorial notes, or line-editing suggestions — using customizable reviewer profiles that understand the story so far. A built-in story bible holds character sheets and wiki pages with change tracking and cross-document search, plus global find-and-replace across every chapter.',
+      'Data stays on-device by default, with optional AES-encrypted backups to Google Drive, and the app ships to both desktop (Electron) and Android (Capacitor).'
     ],
-    techStack: [],
+    techStack: [
+      'Vue 3',
+      'TypeScript',
+      'Vite',
+      'Tailwind CSS',
+      'Pinia',
+      'TanStack Query',
+      'SQLite (sql.js)',
+      'Capacitor',
+      'Electron',
+      'OpenAI API'
+    ],
+    links: [
+      {
+        label: 'GitHub',
+        url: 'https://github.com/gennitdev/ai-beta-reader-frontend'
+      }
+    ],
     album: [
       {
         url: '/portfolio/fun/ai-beta-reader/betabot-ai-generate-chapter-summary.png',
@@ -259,9 +284,27 @@ export const funPortfolio: PortfolioSection[] = [
     org: 'Personal project',
     period: '',
     body: [
-      'Add a description of Clockwork Town here.'
+      'Clockwork Town is a browser-based life simulator that renders human experience as an IT monitoring dashboard: residents are nodes, their needs are metrics, and their emotional states surface as alerts. It treats inner life with deadpan affection by describing psychology in the flat language of uptime monitoring.',
+      'Residents move through daily routines — commuting to work or school and returning home to sleep — on schedules that shift across the week, while a live relationship graph shows friendships and family ties forming and drifting over time. You can build and run multiple towns at once, each with its own households, community spaces, and characters, all displayed through a Grafana-inspired real-time dashboard.',
+      'Play is single-player and offline-capable, with encrypted Google Drive backup and restore. The frontend talks to a schema-first GraphQL backend backed by an embedded Kùzu graph database.'
     ],
-    techStack: [],
+    techStack: [
+      'Vue 3',
+      'TypeScript',
+      'Pinia',
+      'Vite',
+      'Tailwind CSS',
+      'ECharts',
+      'Node.js',
+      'GraphQL Yoga',
+      'Kùzu'
+    ],
+    links: [
+      {
+        label: 'GitHub',
+        url: 'https://github.com/gennit-project/clockwork-town'
+      }
+    ],
     album: [
       {
         url: '/portfolio/fun/clockwork-town/clockwork-town-overview.png',

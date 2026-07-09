@@ -10,7 +10,7 @@ const contact = {
 const repos = [
   {
     label: 'Multiforum Frontend GitHub Repository',
-    url: 'https://github.com/gennitdev/multiforum-nuxt'
+    url: 'https://github.com/gennit-project/multiforum-nuxt'
   },
   {
     label: 'Multiforum Backend GitHub Repository',
