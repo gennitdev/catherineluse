@@ -1,17 +1,17 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useDisplay } from 'vuetify'
+import NavMenu from './NavMenu.vue'
 
 export default defineComponent({
   name: 'UserProfileSidebar',
+  components: {
+    NavMenu
+  },
 
   setup() {
     const { smAndDown } = useDisplay()
     return {
-      navItems: {
-        blogPosts: 'Blog Posts',
-        contact: 'Contact'
-      },
       profile: {
         name: 'Catherine Luse',
         profilePicURL: '/images/square-headshot-medium-size.png',
@@ -32,7 +32,8 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="sticky top-0 rounded-lg px-8 py-12" :class="[!smAndDown ? 'max-h-screen' : '']">
+  <div class="sticky top-0 rounded-lg px-8 py-12" :class="[!smAndDown ? 'max-h-screen overflow-y-auto' : '']">
+    <NavMenu class="mb-8" />
     <div class="mb-4 flex flex-col gap-2">
       <div class="border" style="height: 125px; width: 125px; border-radius: 50%">
         <img

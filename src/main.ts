@@ -24,7 +24,14 @@ import '@kangc/v-md-editor/lib/theme/style/github.css'
 
 import hljs from 'highlight.js'
 
-addIcons(PxChevronLeft, PxExternalLink, PxMail, PxDevicePhone, PxPin, PxDownload)
+addIcons(
+  PxChevronLeft,
+  PxExternalLink,
+  PxMail,
+  PxDevicePhone,
+  PxPin,
+  PxDownload
+)
 
 const vuetify = createVuetify({
   components,
