@@ -211,7 +211,7 @@ export const funPortfolio: PortfolioSection[] = [
     id: 'ai-beta-reader',
     title: 'AI Beta Reader',
     org: 'Personal project',
-    period: '',
+    period: '2025 – Present',
     body: [
       'AI Beta Reader is a local-first writing app that pairs manuscript management with AI-powered feedback. Authors organize books into chapters, parts, and sections in a responsive editor with live preview, while the app auto-generates structured chapter summaries that track plot points, characters, and events to keep continuity across a long manuscript.',
       'It can produce contextual reviews in several styles — fan commentary, editorial notes, or line-editing suggestions — using customizable reviewer profiles that understand the story so far. A built-in story bible holds character sheets and wiki pages with change tracking and cross-document search, plus global find-and-replace across every chapter.',
@@ -282,7 +282,7 @@ export const funPortfolio: PortfolioSection[] = [
     id: 'clockwork-town',
     title: 'Clockwork Town',
     org: 'Personal project',
-    period: '',
+    period: '2025 – Present',
     body: [
       'Clockwork Town is a browser-based life simulator that renders human experience as an IT monitoring dashboard: residents are nodes, their needs are metrics, and their emotional states surface as alerts. It treats inner life with deadpan affection by describing psychology in the flat language of uptime monitoring.',
       'Residents move through daily routines — commuting to work or school and returning home to sleep — on schedules that shift across the week, while a live relationship graph shows friendships and family ties forming and drifting over time. You can build and run multiple towns at once, each with its own households, community spaces, and characters, all displayed through a Grafana-inspired real-time dashboard.',

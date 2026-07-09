@@ -90,30 +90,32 @@ export default defineComponent({
     </button>
   </div>
 </template>
+<!-- Scoped to .markdown-body so these overrides only affect rendered
+     blog markdown, not the rest of the site. -->
 <style>
-p,
-ul,
-li {
+.markdown-body p,
+.markdown-body ul,
+.markdown-body li {
   font-size: 0.9rem !important;
 }
 
-p {
+.markdown-body p {
   margin-bottom: 0.5rem !important;
   margin-top: 0.7rem !important;
 }
 
-ul {
+.markdown-body ul {
   margin-top: 0.5rem !important;
   margin-bottom: 0.5rem !important;
 }
 
-li {
+.markdown-body li {
   margin-bottom: 0.5rem !important;
   margin-left: 1.5rem !important;
 }
 
-h2 {
+.markdown-body h2 {
   font-size: 1.2rem !important;
   margin-top: 1.5rem !important;
-} /* p within nested list should have no margin */
+}
 </style>

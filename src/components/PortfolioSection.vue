@@ -18,8 +18,8 @@ defineProps({
   <div>
     <div class="flex flex-col gap-1">
       <h2 class="text-2xl font-bold text-gray-800">{{ section.title }}</h2>
-      <p v-if="section.org" class="!m-0 text-lg text-gray-600">{{ section.org }}</p>
-      <p v-if="section.period" class="!m-0 text-sm text-gray-400">
+      <p v-if="section.org" class="text-lg text-gray-600">{{ section.org }}</p>
+      <p v-if="section.period" class="text-sm text-gray-400">
         {{ section.period }}
       </p>
     </div>
@@ -28,7 +28,7 @@ defineProps({
       <p
         v-for="(paragraph, idx) in section.body"
         :key="idx"
-        class="!m-0 text-gray-600"
+        class="text-gray-600"
       >
         {{ paragraph }}
       </p>
@@ -41,7 +41,7 @@ defineProps({
       <li
         v-for="tech in section.techStack"
         :key="tech"
-        class="!m-0 rounded-full border border-gray-200 bg-gray-100 px-3 py-1 text-xs text-gray-700"
+        class="rounded-full border border-gray-200 bg-gray-100 px-3 py-1 text-xs text-gray-700"
       >
         {{ tech }}
       </li>

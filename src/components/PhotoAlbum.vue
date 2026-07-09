@@ -21,6 +21,17 @@ const images = computed(() => props.images.filter(Boolean))
 const activeImage = computed(() => images.value[activeIndex.value] || null)
 const hasMultiple = computed(() => images.value.length > 1)
 
+// Track images that fail to load so we can fall back to the placeholder
+// tile instead of showing the browser's broken-image icon.
+const failedUrls = ref(new Set<string>())
+const markFailed = (url?: string | null) => {
+  if (url && !failedUrls.value.has(url)) {
+    failedUrls.value = new Set(failedUrls.value).add(url)
+  }
+}
+const showImage = (image: AlbumImage | null) =>
+  !!image && !!image.url && !failedUrls.value.has(image.url)
+
 const goLeft = () => {
   if (!images.value.length) return
   activeIndex.value =
@@ -139,10 +150,11 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeyDown))
               @click="openLightbox(activeIndex)"
             >
               <img
-                v-if="activeImage && activeImage.url"
+                v-if="showImage(activeImage)"
                 :src="activeImage.url"
                 :alt="activeImage.alt || ''"
                 class="h-full w-full object-contain"
+                @error="markFailed(activeImage?.url)"
               />
               <div
                 v-else
@@ -181,10 +193,11 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeyDown))
               @click="activeIndex = idx"
             >
               <img
-                v-if="image.url"
+                v-if="showImage(image)"
                 :src="image.url"
                 :alt="image.alt || ''"
                 class="h-full w-full object-cover"
+                @error="markFailed(image.url)"
               />
               <div
                 v-else
@@ -270,10 +283,11 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeyDown))
           </button>
 
           <img
-            v-if="activeImage && activeImage.url"
+            v-if="showImage(activeImage)"
             :src="activeImage.url"
             :alt="activeImage.alt || ''"
             class="max-h-full max-w-full object-contain"
+            @error="markFailed(activeImage?.url)"
           />
           <div
             v-else
@@ -327,10 +341,11 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeyDown))
               @click="activeIndex = idx"
             >
               <img
-                v-if="image.url"
+                v-if="showImage(image)"
                 :src="image.url"
                 :alt="image.alt || ''"
                 class="h-full w-full object-cover"
+                @error="markFailed(image.url)"
               />
               <div
                 v-else

@@ -27,6 +27,9 @@ export default defineComponent({
           title.value = frontMatter.title
           createdAt.value = frontMatter.createdAt
           markdownContent.value = match[2] // Store raw markdown instead of rendered HTML
+          if (title.value) {
+            document.title = `${title.value} · Catherine Luse`
+          }
         } else {
           markdownContent.value = rawContent // Store raw markdown
         }
@@ -62,7 +65,10 @@ export default defineComponent({
 
 <template>
   <div>
-    <router-link to="/" class="text-blue-500 hover:underline flex items-center">
+    <router-link
+      :to="{ name: 'BlogList' }"
+      class="text-blue-500 hover:underline flex items-center"
+    >
       <v-icon name="px-chevron-left" />
       <span class="ml-1 my-4">Back to list</span>
     </router-link>
