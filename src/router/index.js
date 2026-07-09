@@ -4,6 +4,7 @@ import BlogPost from '@/components/BlogPost.vue';
 import ProfileLayout from '@/components/ProfileLayout.vue';
 import WorkPortfolio from '@/views/WorkPortfolio.vue';
 import FunPortfolio from '@/views/FunPortfolio.vue';
+import ContactView from '@/views/ContactView.vue';
 const router = createRouter({
     history: createWebHistory('/'),
     scrollBehavior() {
@@ -34,6 +35,11 @@ const router = createRouter({
                     path: '/fun',
                     name: 'FunPortfolio',
                     component: FunPortfolio
+                },
+                {
+                    path: '/contact',
+                    name: 'Contact',
+                    component: ContactView
                 }
             ]
         }

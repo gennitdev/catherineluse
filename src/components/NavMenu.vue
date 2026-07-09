@@ -6,9 +6,10 @@ import { useDisplay } from 'vuetify'
 // Navigation items. On wide screens these render as a vertical list in the
 // sidebar; on narrow screens they collapse into a dropdown menu.
 const navItems = [
-  { label: 'Blog', to: { name: 'BlogList' } },
   { label: 'Work Portfolio', to: { name: 'WorkPortfolio' } },
-  { label: 'Fun Portfolio', to: { name: 'FunPortfolio' } }
+  { label: 'Fun Portfolio', to: { name: 'FunPortfolio' } },
+  { label: 'Blog', to: { name: 'BlogList' } },
+  { label: 'Contact', to: { name: 'Contact' } }
 ]
 
 const { smAndDown } = useDisplay()

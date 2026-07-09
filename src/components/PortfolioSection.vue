@@ -36,7 +36,7 @@ defineProps({
 
     <ul
       v-if="section.techStack && section.techStack.length"
-      class="mt-4 flex flex-wrap gap-2"
+      class="mt-4 flex flex-wrap gap-4"
     >
       <li
         v-for="tech in section.techStack"

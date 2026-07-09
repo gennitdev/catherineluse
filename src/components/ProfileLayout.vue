@@ -4,12 +4,10 @@ import { useRoute } from 'vue-router'
 import { relativeTime } from '@/utils/dateTimeUtils'
 import { useDisplay } from 'vuetify'
 import UserProfileSidebar from './UserProfileSidebar.vue'
-import TopBanner from './TopBanner.vue'
 
 export default defineComponent({
   name: 'ProfileLayout',
   components: {
-    TopBanner,
     UserProfileSidebar
   },
   setup() {
@@ -34,7 +32,6 @@ export default defineComponent({
 
 <template>
   <div class="flex-col">
-    <TopBanner />
     <div class="flex justify-center">
       <div class="max-w-7xl w-full px-2">
         <div class="flex flex-col lg:flex-row w-full">
