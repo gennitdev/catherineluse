@@ -41,7 +41,7 @@ defineProps({
       <li
         v-for="tech in section.techStack"
         :key="tech"
-        class="rounded-full border border-gray-200 bg-gray-100 px-3 py-1 text-xs text-gray-700"
+        class="!m-0 rounded-full border border-gray-200 bg-gray-100 px-3 py-1 text-xs text-gray-700"
       >
         {{ tech }}
       </li>
