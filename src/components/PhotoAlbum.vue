@@ -53,18 +53,26 @@ const closeLightbox = () => {
   isLightboxOpen.value = false
 }
 
-// Touch swipe handling for the main image.
+// Touch swipe handling for the main image. The container uses
+// `touch-action: pan-y`, so the browser keeps handling vertical scroll
+// while horizontal gestures reach these handlers. We only treat a gesture
+// as a swipe when horizontal motion clearly dominates, so a vertical
+// scroll that drifts sideways never flips the image.
 const touchStartX = ref(0)
+const touchStartY = ref(0)
 const handleTouchStart = (event: TouchEvent) => {
   const touch = event.touches[0]
-  if (touch) touchStartX.value = touch.clientX
+  if (!touch) return
+  touchStartX.value = touch.clientX
+  touchStartY.value = touch.clientY
 }
 const handleTouchEnd = (event: TouchEvent) => {
   const touch = event.changedTouches[0]
   if (!touch) return
-  const distance = touch.clientX - touchStartX.value
-  if (Math.abs(distance) > 50) {
-    distance > 0 ? goLeft() : goRight()
+  const deltaX = touch.clientX - touchStartX.value
+  const deltaY = touch.clientY - touchStartY.value
+  if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) {
+    deltaX > 0 ? goLeft() : goRight()
   }
 }
 
@@ -88,7 +96,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeyDown))
         <!-- Main image -->
         <div class="flex items-center justify-center">
           <div
-            class="relative w-full touch-pan-x overflow-hidden rounded-lg"
+            class="relative w-full touch-pan-y overflow-hidden rounded-lg"
             style="height: 400px"
             @touchstart="handleTouchStart"
             @touchend="handleTouchEnd"
