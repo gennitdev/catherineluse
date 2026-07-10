@@ -65,6 +65,9 @@ defineProps({
     </ul>
 
     <div class="mt-5">
+      <p v-if="section.albumNote" class="mb-2 text-xs italic text-gray-400">
+        {{ section.albumNote }}
+      </p>
       <PhotoAlbum :images="section.album" />
     </div>
   </div>

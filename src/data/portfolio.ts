@@ -27,6 +27,8 @@ export type PortfolioSection = {
   techStack?: string[]
   // Optional external links (repo, live demo, etc.).
   links?: { label: string; url: string }[]
+  // Optional caption shown above the photo album (e.g. image source).
+  albumNote?: string
   // Photo album for the section.
   album: AlbumImage[]
 }
@@ -89,6 +91,13 @@ export const workPortfolio: PortfolioSection[] = [
       'Kubernetes',
       'GitOps'
     ],
+    links: [
+      {
+        label: 'Product demo',
+        url: 'https://www.youtube.com/watch?v=_Rp7d2uncLw'
+      }
+    ],
+    albumNote: "Screenshots from Flightcrew's Early Access demo video.",
     album: [
       {
         url: '/portfolio/work/flightcrew/flightcrew-config-recommendations.png',

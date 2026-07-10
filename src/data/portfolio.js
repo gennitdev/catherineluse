@@ -61,6 +61,13 @@ export const workPortfolio = [
             'Kubernetes',
             'GitOps'
         ],
+        links: [
+            {
+                label: 'Product demo',
+                url: 'https://www.youtube.com/watch?v=_Rp7d2uncLw'
+            }
+        ],
+        albumNote: "Screenshots from Flightcrew's Early Access demo video.",
         album: [
             {
                 url: '/portfolio/work/flightcrew/flightcrew-config-recommendations.png',
