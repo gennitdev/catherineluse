@@ -25,7 +25,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="sticky top-0 rounded-lg px-8 py-12" :class="[!smAndDown ? 'max-h-screen overflow-y-auto' : '']">
+  <div class="sticky top-0 z-30 rounded-lg px-8 py-12" :class="[!smAndDown ? 'max-h-screen overflow-y-auto' : '']">
     <div class="mb-8 flex flex-col gap-2">
       <div class="border" style="height: 125px; width: 125px; border-radius: 50%">
         <img
