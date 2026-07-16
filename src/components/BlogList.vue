@@ -62,6 +62,9 @@ export default defineComponent({
     const loadPosts = async () => {
       const postList: Post[] = [
         {
+          slug: 'migrating-beta-bot-to-indexeddb'
+        },
+        {
           slug: 'new-feature-custom-filters'
         },
         {
