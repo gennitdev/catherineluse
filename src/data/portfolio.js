@@ -193,7 +193,7 @@ export const funPortfolio = [
         body: [
             'AI Beta Reader is a local-first writing app that pairs manuscript management with AI-powered feedback. Authors organize books into chapters, parts, and sections in a responsive editor with live preview, while the app auto-generates structured chapter summaries that track plot points, characters, and events to keep continuity across a long manuscript.',
             'It can produce contextual reviews in several styles — fan commentary, editorial notes, or line-editing suggestions — using customizable reviewer profiles that understand the story so far. A built-in story bible holds character sheets and wiki pages with change tracking and cross-document search, plus global find-and-replace across every chapter.',
-            'Data stays on-device by default, with optional AES-encrypted backups to Google Drive, and the app ships to both desktop (Electron) and Android (Capacitor).'
+            'Data stays on-device by default, with optional AES-encrypted backups to Google Drive. The web app is available now at beta-bot.net. Electron desktop and mobile app releases are planned, with the goal of providing the same core functionality as the web app across every platform.'
         ],
         techStack: [
             'Vue 3',
@@ -208,6 +208,10 @@ export const funPortfolio = [
             'OpenAI API'
         ],
         links: [
+            {
+                label: 'Live web app',
+                url: 'https://www.beta-bot.net/'
+            },
             {
                 label: 'GitHub',
                 url: 'https://github.com/gennitdev/ai-beta-reader-frontend'
